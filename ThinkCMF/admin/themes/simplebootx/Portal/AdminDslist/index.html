@@ -1,0 +1,98 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		
+		
+		<form class="js-ajax-form" action="" method="post">
+			
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+						<th>公司名称</th>
+						<th>标题</th>
+						<th>分类</th>
+						<th width="50">点击量</th>
+						<th width="80">会员</th>
+						<th width="70">发布时间</th>
+						<th width="50">状态</th>
+						<th width="150">操作</th>
+					</tr>
+				</thead>
+				<php>
+				$status=array("1"=>"已审核","0"=>"未审核");
+				$top_status=array("1"=>"已置顶","0"=>"未置顶");
+				$recommend_status=array("1"=>"已推荐","0"=>"未推荐");
+				</php>
+				<foreach name="lists" item="vo">
+				<tr>
+					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.tid}" title="ID:{$vo.tid}"></td>
+					<td>{$vo.companyname}</td>
+					<td><a href="{:U('portal/article/index',array('id'=>$vo['tid']))}" target="_blank"> <span>{$vo.post_title}</span></a></td>
+					<td>{$terms[$vo['term_id']]}</td>
+					<td>{$vo.post_hits}</td>
+					<td>{$users[$vo['post_author']]['user_login']}</td>
+					<td>{$vo.post_date}</td>
+					<td>{$status[$vo['post_status']]}
+					</td>
+					<td>
+						<a href="{:U('AdminDslist/detail',array('id'=>$vo['id']))}">详情</a> | 
+						<if condition="$vo['post_status'] eq 1"> <a href="{:U('AdminDslist/cancel',array('id'=>$vo['id']))}" data-msg="确认要取消审核吗？">取消审核</a> | 
+						<else /> <a href="{:U('AdminDslist/adjust',array('id'=>$vo['id']))}" data-msg="确认要审核吗？">审核</a> |
+						</if>
+						<a href="{:U('AdminDslist/delete',array('id'=>$vo['id'],'tid'=>$vo['term_id']))}" class="js-ajax-delete">删除</a></td>
+				</tr>
+				</foreach>
+				
+			</table>
+			
+			<div class="pagination">{$Page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		function refersh_window() {
+			var refersh_time = getCookie('refersh_time');
+			if (refersh_time == 1) {
+				window.location = "{:U('AdminPost/index',$formget)}";
+			}
+		}
+		setInterval(function() {
+			refersh_window();
+		}, 2000);
+		$(function() {
+			setCookie("refersh_time", 0);
+			Wind.use('ajaxForm', 'artDialog', 'iframeTools', function() {
+				//批量移动
+				$('.js-articles-move').click(function(e) {
+					var str = 0;
+					var id = tag = '';
+					$("input[name='ids[]']").each(function() {
+						if ($(this).attr('checked')) {
+							str = 1;
+							id += tag + $(this).val();
+							tag = ',';
+						}
+					});
+					if (str == 0) {
+						art.dialog.through({
+							id : 'error',
+							icon : 'error',
+							content : '您没有勾选信息，无法进行操作！',
+							cancelVal : '关闭',
+							cancel : true
+						});
+						return false;
+					}
+					var $this = $(this);
+					art.dialog.open("__ROOT__/index.php?g=portal&m=AdminPost&a=move&ids="+ id, {
+						title : "批量移动",
+						width : "80%"
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>

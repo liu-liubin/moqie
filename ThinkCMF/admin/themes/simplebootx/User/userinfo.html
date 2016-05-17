@@ -1,0 +1,102 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		
+		<form class="form-horizontal js-ajax-form" method="post" action="">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label" for="input-user_nicename">昵称</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="{$user.id}">
+						<input type="text" id="input-user_nicename" name="user_nicename" value="{$user.user_nicename}" readonly="readonly">
+					</div>
+				</div>
+				
+				<div class="control-group">
+					<label class="control-label" for="input-avatar">头像</label>
+					<div class="controls">
+						<img width="50" height="50" src="{:U('user/public/avatar',array('id'=>$user['id']))}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-mobile">手机</label>
+					<div class="controls">
+						<input type="text" id="input-mobile"  name="mobile" value="{$user.mobile}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-truename">真实姓名</label>
+					<div class="controls">
+						<input type="text" id="input-truename"  name="truename" value="{$user.truename}" readonly="readonly">
+					</div>
+				</div>
+				<!-- <div class="control-group">
+					<label class="control-label" for="input-sex">性别</label>
+					<div class="controls">
+						<if condition="$user['sex'] eq 1"> <input type="text" id="input-sex"  name="sex" value="男" readonly="readonly">
+						<elseif condition="$user['sex'] eq 2"/><input type="text" id="input-sex"  name="sex" value="女" readonly="readonly">
+						<else /> <input type="text" id="input-sex"  name="sex" value="保密" readonly="readonly">
+						</if>
+					</div>
+				</div> -->
+				<php>$sexs=array("1"=>'男',"2"=>'女',"0"=>'保密');</php>
+				<div class="control-group">
+					<label class="control-label" for="input-sex">性别</label>
+					<div class="controls">
+						 <input type="text" id="input-sex"  name="sex" value="{$sexs[$user['sex']]}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-address">联系地址</label>
+					<div class="controls">
+						<input type="text" id="input-address"  name="address" value="{$user.address}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-companyname">公司名称</label>
+					<div class="controls">
+						<input type="text" id="input-companyname"  name="companyname" value="{$user.companyname}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-company_add">公司地址</label>
+					<div class="controls">
+						<input type="text" id="input-company_add"  name="company_add" value="{$user.company_add}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-primarybusiness">主营业务</label>
+					<div class="controls">
+						<input type="text" id="input-primarybusiness"  name="primarybusiness" value="{$user.primarybusiness}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-customer_groups">客户群体</label>
+					<div class="controls">
+						<input type="text" id="input-customer_groups"  name="customer_groups" value="{$user.customer_groups}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-customer_email">公司邮箱</label>
+					<div class="controls">
+						<input type="text" id="input-customer_email"  name="customer_email" value="{$user.customer_email}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-company_jianjie">公司简介</label>
+					<div class="controls">
+						<textarea name="company_jianjie" id="company_jianjie" style='width: 98%; height: 200px;' readonly="readonly">{$user.company_jianjie}</textarea>
+					</div>
+				</div>
+				<div class="form-actions">
+					<button  class="btn btn-primary "><a href="{:U('indexadmin/adjust',array('id'=>$user['id']))}"  >审核</a></button>
+					<button  class="btn btn-primary "><a href="{:U('indexadmin/adjustfail',array('id'=>$user['id']))}"  >审核不通过</a></button>
+				</div>
+				
+			</fieldset>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

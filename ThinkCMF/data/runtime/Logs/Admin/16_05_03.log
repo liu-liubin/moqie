@@ -1,0 +1,27 @@
+[ 2016-05-03T09:32:55+08:00 ] ::1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0280s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0080s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='0.0.0.0',`last_login_time`='2016-05-03 09:32:55',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0020s ]
+
+[ 2016-05-03T09:37:29+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-05-03T15:37:22+08:00 ] ::1 /index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_slide` [ RunTime:0.0130s ]
+SQL: SHOW COLUMNS FROM `moqie_slide_cat` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_slide` (`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`,`slide_pic`) VALUES ('0','test','http://www.baidu.com','test','test','/data/upload/20160503/5728552f72611.jpg') [ RunTime:0.0010s ]
+

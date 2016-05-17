@@ -1,0 +1,14 @@
+[ 2016-05-04T09:22:28+08:00 ] ::1 /
+ERR: 1054:Unknown column 'taxonomys' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( taxonomys='dslist' ) ORDER BY listorder ASC 
+
+[ 2016-05-04T09:23:10+08:00 ] ::1 /portal/index/dslist
+ERR: 1054:Unknown column 'taxonomys' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_terms` WHERE ( taxonomys='dslist' ) ORDER BY listorder ASC 
+
+[ 2016-05-04T14:03:12+08:00 ] ::1 /index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-05-04T14:03:15+08:00 ] ::1 /index.php?g=&m=AdminPost&a=add&term=
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+

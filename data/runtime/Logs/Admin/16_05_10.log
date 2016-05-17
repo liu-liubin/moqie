@@ -1,0 +1,78 @@
+[ 2016-05-10T11:41:56+08:00 ] 119.128.46.164 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0479s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0303s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='119.128.46.164',`last_login_time`='2016-05-10 11:41:56',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='13798943323',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0000s ]
+
+[ 2016-05-10T16:38:56+08:00 ] 116.4.47.199 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003906s ]
+
+[ 2016-05-10T16:39:02+08:00 ] 116.4.47.199 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0186s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0049s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='116.4.47.199',`last_login_time`='2016-05-10 16:39:02',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='13798943323',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0010s ]
+
+[ 2016-05-10T18:21:17+08:00 ] 116.4.47.199 /index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003907s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006836s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0068s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_slide` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `moqie_slide_cat` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined index: validate D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_slide` (`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`,`slide_pic`) VALUES ('1','的鬼地方','','','','/data/upload/20160510/5731b6193ee68.jpg') [ RunTime:0.0010s ]
+
+[ 2016-05-10T18:21:53+08:00 ] 116.4.47.199 /index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003906s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_slide` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `moqie_slide_cat` [ RunTime:0.0049s ]
+NOTIC: [8] Undefined index: validate D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_slide` (`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`,`slide_pic`) VALUES ('1','保持比年初v','','','','/data/upload/20160510/5731b63c152d6.jpg') [ RunTime:0.0010s ]
+
+[ 2016-05-10T18:22:11+08:00 ] 116.4.47.199 /index.php?g=Admin&m=slide&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002930s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_slide` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `moqie_slide_cat` [ RunTime:0.0039s ]
+NOTIC: [8] Undefined index: validate D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\test\moqie\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_slide` (`slide_cid`,`slide_name`,`slide_url`,`slide_des`,`slide_content`,`slide_pic`) VALUES ('1','电饭锅','','','','/data/upload/20160510/5731b64b51053.jpg') [ RunTime:0.0000s ]
+
+[ 2016-05-10T21:22:51+08:00 ] 116.4.47.199 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003907s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0439s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0352s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='116.4.47.199',`last_login_time`='2016-05-10 21:22:51',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='13798943323',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0010s ]
+

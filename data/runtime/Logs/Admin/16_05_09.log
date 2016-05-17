@@ -1,0 +1,22 @@
+[ 2016-05-09T10:29:53+08:00 ] 116.4.29.100 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003907s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.1191s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0059s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='116.4.29.100',`last_login_time`='2016-05-09 10:29:53',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0176s ]
+
+[ 2016-05-09T16:26:05+08:00 ] 116.4.47.199 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003906s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0059s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0215s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0059s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='572ff6b9dc7ec.jpg',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='116.4.47.199',`last_login_time`='2016-05-09 16:26:05',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0000s ]
+

@@ -1,0 +1,6 @@
+[ 2016-05-08T02:36:35+08:00 ] 121.42.0.16 /install/svinfo.php?phpinfo=true
+ERR: 无法加载控制器:Svinfo
+
+[ 2016-05-08T04:13:14+08:00 ] 121.42.0.16 /install/svinfo.php?phpinfo=true
+ERR: 无法加载控制器:Svinfo
+

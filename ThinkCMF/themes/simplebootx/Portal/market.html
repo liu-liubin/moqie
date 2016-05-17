@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <title>模切之家</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/tigo-ui.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+</head>
+<body ng-app="myApp" ng-controller="marketCtrl">
+<header class="wm-head container">
+
+    <a href="javascript:history.back();" class="back" ></a>
+    <a href="publish.html" class="tigo-btn sad-btn right">+发布</a>
+    <h1 style="top:-.1rem;">
+        <div class="tigo-radio-group sad-radio">
+            <label class="check-radio" ng-class="{active:feed}" ng-click="feed=true;need=false;togglePro(0)" for="gongying">供给<input id="gongying" name="type" type="radio" /> </label>
+            <label class="check-radio" ng-class="{active:need}" ng-click="feed=false;need=true;togglePro(1)" for="xuqiu">需求<input id="xuqiu" name="type" type="radio" /> </label>
+        </div>
+    </h1>
+
+</header>
+<section class="sad-wrapper container clearfix">
+    <div class="tigo-search">
+        <span class="search-title" ng-click="openItem()">产品<i class="fa fa-angle-down"></i></span><input data-search="" type="text" name="keyword" />
+    </div>
+
+    <!--产品列表-->
+    <div class="pro-item clearfix" data-bg>
+        <!--弹出产品分类-->
+        <div class="open-item " ng-style="categoryStyle">
+            <div class="sad-menu">
+                <ul class="tab-list">
+                    <li ng-repeat="c in categoryParent" ng-click="tabList(c.id);c.active='active'" ng-class="c.active"><a href="javascript:;" ng-bind="c.title"></a></li>
+                </ul>
+            </div>
+            <div class="sad-filter ">
+                <div  class="class-item">
+                    <blockquote class="caption all">全部</blockquote>
+                    <a href="" data-checkbox >全部</a>
+                    <blockquote class="caption ">导热散热类</blockquote>
+                    <div class="sad-sub-filter" >
+                        <a href="" data-checkbox ng-repeat="x in categoryChild" ng-bind="x.title"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="product-list market-list">
+            <li class="clearfix " ng-repeat="x in productList">
+                <div class="pro-right pull-right">
+                    <button type="button" class="tigo-btn gz">+关注</button>
+                    <button type="button" class="tigo-btn phone"><i class="fa fa-phone "></i> </button>
+                </div>
+                <div class="pro-left ">
+                    <img class="img" src="images/menu_02.png" />
+                    <h3 class="title" ><span class="type">供</span> <span ng-bind="x.title"></span></h3>
+                    <h5 class="tags"><span>透明</span><span>单层</span><span>高效</span><span>耐用</span></h5>
+                    <h5 class="price"><span ng-bind="x.price"></span>/<span ng-bind="x.prefix"></span></h5>
+                </div>
+                <h5 class="other flex-between"><div ng-bind="x.company"></div>  <div ng-bind="x.time"></div></h5>
+            </li>
+        </ul>
+    </div>
+</section>
+<footer class="footer">
+    <dl class="nav-list">
+        <a href="index.html">
+            <dd data-nav-home><!--<img src="images/nav_01.png" />--> </dd>
+            <dt>首页</dt>
+        </a>
+    </dl>
+    <dl class="nav-list active">
+        <a href="market.html" >
+            <dd data-nav-market><!--<img src="images/nav_02.png" /> --></dd>
+            <dt>商场</dt>
+        </a>
+    </dl>
+    <dl class="nav-list">
+        <a href="news.html" >
+            <dd data-nav-news></dd>
+            <dt>资讯</dt>
+        </a>
+    </dl>
+    <dl class="nav-list">
+        <a href="member.html" >
+            <dd data-nav-my></dd>
+            <dt>我的</dt>
+        </a>
+    </dl>
+</footer>
+</body>
+<script>
+    /*$(function(){
+        $(".sad-radio .check-radio").click(function(){
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active");
+        })
+    })*/
+    var app = angular.module("myApp",[]);
+    app.controller("marketCtrl",function($scope,$location){
+        $scope.list = [[
+            {
+                title: "韩国裕屋UY-935保护膜0.25MM1111",
+                cover: "images/menu_02.png",
+                price: "300",
+                prefix: "份",
+                company: "东莞市模切之家",
+                time: "2016-03-20"
+            }, {
+                title: "韩国裕屋22222222222222",
+                cover: "images/menu_02.png",
+                price: "500",
+                prefix: "份",
+                company: "东莞市模切之家",
+                time: "2016-03-21"
+            }
+        ],
+         [
+             {
+                    title: "需求11111111111111111",
+                    cover: "images/menu_02.png",
+                    price: "300",
+                    prefix: "份",
+                    company: "东莞市模切之家",
+                    time: "2016-03-20"
+                }, {
+                    title: "需求22222222222222",
+                    cover: "images/menu_02.png",
+                    price: "500",
+                    prefix: "份",
+                    company: "东莞市模切之家",
+                    time: "2016-03-21"
+                }
+          ]
+        ]
+        if($location.hash()=="need"){
+            $scope.feed = false;
+            $scope.need = true;
+            $scope.productList = $scope.list[1];
+        }else {
+            $scope.feed = true;
+            $scope.need = false;
+            $scope.productList = $scope.list[0];
+        }
+        $scope.togglePro = function(n){
+            $scope.productList = $scope.list[n];
+        }
+
+        //弹出筛选分类层
+        $scope.openHide = true;
+        $scope.openItem = function(){
+            if($scope.openHide){
+                $scope.categoryStyle = {'display':'block'}
+            }else{
+                $scope.categoryStyle = {'display':'none'}
+            }
+            $scope.openHide = !$scope.openHide;
+        }
+
+        //分类
+        var categoryList = [{title:'粘胶类',id:1,parent_id:0},{title:"防水防尘类",id:2,parent_id:0},{title:"自动化设备",id:3,parent_id:0},{title:"粘胶1",id:3,parent_id:1},{title:"粘胶3",id:6,parent_id:1},{title:"粘胶2",id:5,parent_id:1}]
+        var crParent = [],crChild = [];
+        angular.forEach(categoryList,function(data){
+            if(data.parent_id==0) {
+                crParent.push(data);
+            }
+            if(categoryList[0].id == data.parent_id){
+                crChild.push(data)
+            }
+        })
+        crParent[0].active = "active";
+        $scope.categoryParent = crParent;
+        $scope.categoryChild = crChild;
+
+        //弹出层 分类tab选项
+        $scope.tabList = function(id){
+            crChild = [];
+            angular.forEach(categoryList,function(data){
+                data.active = null;
+                if(data.parent_id == id){
+                    crChild.push(data);
+                }
+            })
+            $scope.categoryChild = crChild;
+        }
+    })
+</script>
+</html>

@@ -1,0 +1,90 @@
+[ 2016-04-29T09:25:08+08:00 ] ::1 /index.php?g=Admin&m=public&a=dologin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `moqie_users` WHERE `user_login` = 'admin' LIMIT 1   [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `moqie_role_user` [ RunTime:0.0400s ]
+SQL: SELECT `role_id` FROM moqie_role_user a INNER JOIN moqie_role as b on a.role_id =b.id  WHERE `user_id` = '1' AND `status` = 1  [ RunTime:0.0160s ]
+SQL: UPDATE `moqie_users` SET `user_login`='admin',`user_pass`='###a8e846e448a270d4e83fbeff163727df',`user_nicename`='admin',`user_email`='346685825@qq.com',`user_url`='',`avatar`='',`sex`='0',`birthday`='0000-00-00',`signature`='',`last_login_ip`='0.0.0.0',`last_login_time`='2016-04-29 09:25:08',`create_time`='2016-04-26 10:38:22',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`companyname`='',`logo`='',`company_add`='',`primarybusiness`='',`customer_groups`='',`customer_email`='',`company_status`=NULL,`address`=NULL WHERE `id` = '1' [ RunTime:0.0010s ]
+
+[ 2016-04-29T10:39:30+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:39:46+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=add&parentid=1&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:40:49+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_menu` [ RunTime:0.0090s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `moqie_auth_rule` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT * FROM `moqie_menu` WHERE `app` = 'Portal' AND `model` = 'AdminDemandsupplylist' AND `action` = 'index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `parentid` FROM `moqie_menu` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_menu` (`parentid`,`name`,`app`,`model`,`action`,`data`,`icon`,`remark`,`status`,`type`) VALUES ('1','供需管理','Portal','AdminDemandsupplylist','index','','','','1','1') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_auth_rule` WHERE `name` = 'portal/admindemandsupplylist/index' LIMIT 1   [ RunTime:0.0310s ]
+SQL: INSERT INTO `moqie_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('portal/admindemandsupplylist/index','Portal','admin_url','供需管理') [ RunTime:0.0010s ]
+
+[ 2016-04-29T10:40:50+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:41:09+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:41:20+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit&id=163&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:41:30+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_menu` [ RunTime:0.0080s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `moqie_auth_rule` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `moqie_menu` WHERE `app` = 'Portal' AND `model` = 'AdminDemandsupplylist' AND `action` = 'index' LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `moqie_menu` SET `parentid`='1',`name`='供需管理',`app`='Portal',`model`='AdminDemandsupplylist',`action`='index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 163 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_auth_rule` WHERE `name` = 'portal/admindemandsupplylist/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_auth_rule` SET `name`='portal/admindemandsupplylist/index',`module`='Portal',`type`='admin_url',`title`='供需管理' WHERE `name` = 'portal/admindemandsupplylist/index' [ RunTime:0.0010s ]
+
+[ 2016-04-29T10:41:31+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit&id=163&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:44:53+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:45:09+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit&id=163&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+
+[ 2016-04-29T10:50:26+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_menu` [ RunTime:0.0100s ]
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+SQL: SHOW COLUMNS FROM `moqie_auth_rule` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+SQL: SELECT `id` FROM `moqie_menu` WHERE `app` = 'Portal' AND `model` = 'AdminDslist' AND `action` = 'index' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: UPDATE `moqie_menu` SET `parentid`='1',`name`='供需管理',`app`='Portal',`model`='AdminDslist',`action`='index',`data`='',`icon`='',`remark`='',`status`='1',`type`='1' WHERE `id` = 163 [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_auth_rule` WHERE `name` = 'portal/admindslist/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: INSERT INTO `moqie_auth_rule` (`name`,`module`,`type`,`title`) VALUES ('portal/admindslist/index','Portal','admin_url','供需管理') [ RunTime:0.0010s ]
+
+[ 2016-04-29T10:50:27+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=edit&id=163&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+

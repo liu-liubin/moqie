@@ -1,0 +1,75 @@
+[ 2016-05-11T10:02:32+08:00 ] 119.128.46.164 /index.php?g=user&m=favorite&a=index
+ERR: 1054:Unknown column 'term_id' in 'field list'
+ [ SQL语句 ] : SELECT `term_id`,post_title as title,post_keywords as content,`id`,`post_hits`,`smeta`,`post_modified`,`tag`,`ds`,`post_author`,`price`,`unit`,`img1`,`img2` FROM moqie_user_favorites a INNER JOIN moqie_dslist b ON a.object_id = b.id  WHERE `post_status` = 1 AND `term_id` > '5' ORDER BY a.listorder ASC,b.post_modified DESC LIMIT 0,10  
+
+[ 2016-05-11T10:02:57+08:00 ] 119.128.46.164 /index.php?g=user&m=favorite&a=index
+ERR: 1052:Column 'id' in field list is ambiguous
+ [ SQL语句 ] : SELECT post_title as title,post_keywords as content,`id`,`post_hits`,`smeta`,`post_modified`,`tag`,`ds`,`post_author`,`price`,`unit`,`img1`,`img2` FROM moqie_user_favorites a INNER JOIN moqie_dslist b ON a.object_id = b.id  WHERE `post_status` = 1 AND `term_id` > '5' ORDER BY a.listorder ASC,b.post_modified DESC LIMIT 0,10  
+
+[ 2016-05-11T10:03:30+08:00 ] 119.128.46.164 /index.php?g=user&m=favorite&a=index
+ERR: 1054:Unknown column 'term_id' in 'where clause'
+ [ SQL语句 ] : SELECT post_title as title,post_keywords as content,b.id,`post_hits`,`smeta`,`post_modified`,`tag`,`ds`,`post_author`,`price`,`unit`,`img1`,`img2` FROM moqie_user_favorites a INNER JOIN moqie_dslist b ON a.object_id = b.id  WHERE `post_status` = 1 AND `term_id` > '5' ORDER BY a.listorder ASC,b.post_modified DESC LIMIT 0,10  
+
+[ 2016-05-11T10:04:07+08:00 ] 119.128.46.164 /index.php?g=user&m=favorite&a=index
+ERR: 1054:Unknown column 'a.listorder' in 'order clause'
+ [ SQL语句 ] : SELECT post_title as title,post_keywords as content,b.id,`post_hits`,`smeta`,`post_modified`,`tag`,`ds`,`post_author`,`price`,`unit`,`img1`,`img2` FROM moqie_user_favorites a INNER JOIN moqie_dslist b ON a.object_id = b.id  WHERE `post_status` = 1 ORDER BY a.listorder ASC,b.post_modified DESC LIMIT 0,10  
+
+[ 2016-05-11T10:08:10+08:00 ] 119.128.46.164 /index.php?g=user&m=favorite&a=index
+ERR: 1054:Unknown column 'c.cpmpany' in 'field list'
+ [ SQL语句 ] : SELECT post_title as title,post_keywords as content,b.id,`post_modified`,`tag`,`ds`,`post_author`,`price`,`unit`,`img1`,`img2`,c.cpmpany,c.mobile FROM moqie_user_favorites a INNER JOIN moqie_dslist b ON a.object_id = b.id INNER JOIN moqie_users c ON b.post_author = c.id  WHERE `post_status` = 1 ORDER BY b.post_modified DESC LIMIT 0,10  
+
+[ 2016-05-11T10:55:40+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002929s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T10:55:43+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001953s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T11:40:53+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003906s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T11:52:10+08:00 ] 119.128.46.164 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T14:05:39+08:00 ] 119.128.46.164 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T14:06:00+08:00 ] 119.128.46.164 /user/css/style.css
+ERR: 无法加载控制器:Css
+
+[ 2016-05-11T14:06:01+08:00 ] 119.128.46.164 /user/css/wm-ui.css
+ERR: 无法加载控制器:Css
+
+[ 2016-05-11T14:30:09+08:00 ] 116.4.68.111 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-11T17:51:39+08:00 ] 116.4.68.111 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002929s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+

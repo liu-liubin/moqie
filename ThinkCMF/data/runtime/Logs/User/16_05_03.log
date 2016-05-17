@@ -1,0 +1,49 @@
+[ 2016-05-03T09:32:43+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.004000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T11:54:10+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T14:12:46+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T17:42:03+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T17:44:02+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T17:44:38+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-03T17:44:58+08:00 ] ::1 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: url D:\Project\moqie\ThinkCMF\application\Common\Controller\AppframeController.class.php 第 24 行.
+

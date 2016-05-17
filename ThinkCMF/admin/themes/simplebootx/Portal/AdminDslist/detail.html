@@ -1,0 +1,86 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		
+		<form class="form-horizontal js-ajax-form" method="post" action="">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label" for="input-post_title">标题</label>
+					<div class="controls">
+						<input type="hidden" name="id" value="{$dslist.id}">
+						<input type="text" id="input-post_title" name="post_title" value="{$dslist.post_title}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-avatar">公司名称</label>
+					<div class="controls">
+						<input type="text" id="input-companyname"  name="companyname" value="{$dslist.companyname}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-term">分类</label>
+					<div class="controls">
+						<input type="text" id="input-term"  name="term" value="{$term['name']}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-user">会员</label>
+					<div class="controls">
+						<input type="text" id="input-user"  name="user" value="{$users[$dslist['post_author']]['user_login']}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-num">数量</label>
+					<div class="controls">
+						 <input type="text" id="input-num"  name="num" value="{$dslist.num}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-price">价格</label>
+					<div class="controls">
+						<input type="text" id="input-price"  name="mobile" value="{$dslist.price}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-tag">标签</label>
+					<div class="controls">
+						<input type="text" id="input-tag"  name="tag" value="{$dslist.tag}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-specification">产品参数</label>
+					<div class="controls">
+						<input type="text" id="input-specification"  name="specification" value="{$dslist.specification}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-description">产品描述</label>
+					<div class="controls">
+						<input type="text" id="input-description"  name="description" value="{$dslist.description}" readonly="readonly">
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-img1">图片1</label>
+					<div class="controls">
+						<img width="50" height="50" src="{:U('user/public/avatar',array('id'=>$user['id']))}" />
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label" for="input-img2">图片2</label>
+					<div class="controls">
+						<img width="50" height="50" src="{:U('user/public/avatar',array('id'=>$user['id']))}" />
+					</div>
+				</div>
+				
+				<div class="form-actions">
+					<button  class="btn btn-primary "><a href="{:U('AdminDslist/adjust',array('id'=>$dslist['id']))}"  >审核</a></button>
+					<button  class="btn btn-primary "><a href="{:U('AdminDslist/cacel',array('id'=>$dslist['id']))}"  >审核不通过</a></button>
+				</div>
+				
+			</fieldset>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

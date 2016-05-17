@@ -1,0 +1,1029 @@
+[ 2016-05-03T09:47:43+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('0','资讯','资讯','article','','','','list','article') [ RunTime:0.0020s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-1' WHERE ( term_id=1 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:50:14+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('0','供需','供需','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2' WHERE ( term_id=2 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:51:14+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('1','技术','技术','article','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-1-3' WHERE ( term_id=3 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:51:36+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('1','活动','活动','article','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-1-4' WHERE ( term_id=4 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:52:07+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('1','行业','行业','article','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-1-5' WHERE ( term_id=5 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:53:07+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('2','供应','供应','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=2 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6' WHERE ( term_id=6 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T09:53:49+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('2','需求','需求','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=2 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-7' WHERE ( term_id=7 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:02:21+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','薄膜类','薄膜类','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8' WHERE ( term_id=8 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:02:44+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','胶粘类','胶粘类
+
+
+
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9' WHERE ( term_id=9 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:03:09+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','纸品类','纸品类
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-10' WHERE ( term_id=10 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:03:24+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','防水防尘类','防水防尘类
+
+
+
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11' WHERE ( term_id=11 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:07:30+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','导电屏蔽类','导电屏蔽类
+
+
+
+
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12' WHERE ( term_id=12 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:07:42+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','导热散热类','导热散热类
+
+
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-13' WHERE ( term_id=13 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:07:59+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','绝缘阻燃类','绝缘阻燃类
+','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-14' WHERE ( term_id=14 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:08:08+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','密封缓冲类','密封缓冲类
+','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-15' WHERE ( term_id=15 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:08:29+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','刀模刀具','刀模刀具
+
+','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16' WHERE ( term_id=16 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:08:40+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','自动化设备','自动化设备','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17' WHERE ( term_id=17 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:09:22+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('6','加工','加工','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=6 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-18' WHERE ( term_id=18 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:17:17+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','离型膜','离型膜','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-30' WHERE ( term_id=30 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:17:28+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','保护膜','保护膜','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-31' WHERE ( term_id=31 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:17:41+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','增光膜','增光膜','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-32' WHERE ( term_id=32 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:17:52+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','扩散膜','扩散膜','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-33' WHERE ( term_id=33 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:18:06+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','反射膜','反射膜','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-34' WHERE ( term_id=34 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:18:21+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','ITO导电膜','ITO导电膜','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-35' WHERE ( term_id=35 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:18:40+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('8','3D膜','3D膜','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=8 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-8-36' WHERE ( term_id=36 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:18:58+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('9','双面胶带','双面胶带','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=9 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9-37' WHERE ( term_id=37 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:19:16+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('9','黑白胶','黑白胶','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=9 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9-38' WHERE ( term_id=38 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:19:39+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('9','泡棉胶','泡棉胶','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=9 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9-39' WHERE ( term_id=39 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:20:10+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('9','OCA光学胶','OCA光学胶','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=9 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9-40' WHERE ( term_id=40 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:20:24+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('9','AB胶','AB胶','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=9 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-9-41' WHERE ( term_id=41 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:20:40+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('10','离型纸','离型纸','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=10 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-10-42' WHERE ( term_id=42 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:20:51+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('10','美纹纸','美纹纸','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=10 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-10-43' WHERE ( term_id=43 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:21:04+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('11','尼龙网纱','尼龙网纱','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11-44' WHERE ( term_id=44 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:21:21+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('11','金属网纱','金属网纱','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11-45' WHERE ( term_id=45 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:21:51+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('11','防水透气膜','防水透气膜','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11-46' WHERE ( term_id=46 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:22:03+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('11','不织布','不织布','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11-47' WHERE ( term_id=47 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:22:17+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('11','调音纸','调音纸','article','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=11 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-11-48' WHERE ( term_id=48 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:23:01+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','导电布','导电布','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-49' WHERE ( term_id=49 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:23:13+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','导电泡棉','导电泡棉','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-50' WHERE ( term_id=50 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:23:26+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','导电胶','导电胶','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-51' WHERE ( term_id=51 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:23:44+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','铜箔','铜箔','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-52' WHERE ( term_id=52 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:23:59+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','铝箔','铝箔','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-53' WHERE ( term_id=53 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:24:13+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('12','纳米碳铜','纳米碳铜','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=12 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-12-54' WHERE ( term_id=54 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:24:50+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('13','石墨片','石墨片','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=13 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-13-55' WHERE ( term_id=55 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:25:02+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('13','吸波片','吸波片','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=13 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-13-56' WHERE ( term_id=56 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:25:15+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('13','导热硅胶','导热硅胶','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=13 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-13-57' WHERE ( term_id=57 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:25:35+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('13','导热硅脂','导热硅脂','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=13 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-13-58' WHERE ( term_id=58 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:25:51+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('14','麦拉','麦拉','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=14 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-14-59' WHERE ( term_id=59 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:26:07+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('14','PC/PVC/PET','PC/PVC/PET','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=14 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-14-60' WHERE ( term_id=60 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:26:20+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('15','硅胶','硅胶','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=15 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-15-61' WHERE ( term_id=61 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:26:36+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('15','poron','poron','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=15 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-15-62' WHERE ( term_id=62 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:26:51+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','激光刀模','激光刀模','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-63' WHERE ( term_id=63 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:40:50+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','雕刻刀模','雕刻刀模','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-64' WHERE ( term_id=64 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:41:11+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0140s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','腐蚀刀模','腐蚀刀模','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-65' WHERE ( term_id=65 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:41:29+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','QDC模','QDC模','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-66' WHERE ( term_id=66 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:41:41+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','磁性刀皮','磁性刀皮','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-67' WHERE ( term_id=67 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:41:56+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0120s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','圆刀五金模','圆刀五金模','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-68' WHERE ( term_id=68 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:42:07+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('16','刀模配套','刀模配套','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=16 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-16-69' WHERE ( term_id=69 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:42:24+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','模切机','模切机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-70' WHERE ( term_id=70 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:42:46+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','贴合机','贴合机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-71' WHERE ( term_id=71 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:43:02+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','覆膜机','覆膜机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-72' WHERE ( term_id=72 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:43:14+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0140s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0130s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','套位机','套位机','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-73' WHERE ( term_id=73 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:43:34+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','轮转机','轮转机','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-74' WHERE ( term_id=74 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:43:46+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','涂布机','涂布机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-75' WHERE ( term_id=75 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:43:58+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','分条机','分条机','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-76' WHERE ( term_id=76 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:44:12+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0090s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','分切机','分切机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-77' WHERE ( term_id=77 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:44:27+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','激光打样机','激光打样机','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-78' WHERE ( term_id=78 ) [ RunTime:0.0010s ]
+
+[ 2016-05-03T10:44:42+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0130s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0110s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','检测设备','检测设备','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-79' WHERE ( term_id=79 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:44:55+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0090s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('17','配套设备','配套设备','dslist','','','','list','article') [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=17 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-17-80' WHERE ( term_id=80 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T10:45:06+08:00 ] ::1 /index.php?g=&m=AdminTerm&a=add_post
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0150s ]
+SQL: SELECT * FROM `moqie_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `moqie_terms` [ RunTime:0.0100s ]
+NOTIC: [8] Undefined index: validate D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\Project\moqie\ThinkCMF\simplewind\Core\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `moqie_terms` (`parent`,`name`,`description`,`taxonomy`,`seo_title`,`seo_keywords`,`seo_description`,`list_tpl`,`one_tpl`) VALUES ('18','模切加工','模切加工','dslist','','','','list','article') [ RunTime:0.0010s ]
+SQL: SELECT * FROM `moqie_terms` WHERE ( term_id=18 ) LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `moqie_terms` SET `path`='0-2-6-18-81' WHERE ( term_id=81 ) [ RunTime:0.0000s ]
+
+[ 2016-05-03T15:05:21+08:00 ] ::1 /index.php?g=Portal&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-05-03T15:37:24+08:00 ] ::1 /index.php?g=&m=AdminPost&a=index&menuid=7
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+
+[ 2016-05-03T16:17:17+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) ORDER BY listorder ASC LIMIT 0,5  
+
+[ 2016-05-03T16:17:36+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) ORDER BY post_modified Desc LIMIT 0,5  
+
+[ 2016-05-03T16:17:39+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) ORDER BY post_modified Desc LIMIT 0,5  
+
+[ 2016-05-03T16:21:00+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) ORDER BY post_modified Desc LIMIT 0,5  
+
+[ 2016-05-03T17:38:06+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) ORDER BY post_modified Desc LIMIT 0,5  
+
+[ 2016-05-03T17:41:40+08:00 ] ::1 /
+ERR: 1054:Unknown column 'posts_status' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `moqie_dslist` WHERE ( posts_status=1 ) LIMIT 0,5  
+

@@ -1,0 +1,97 @@
+[ 2016-05-06T09:18:59+08:00 ] ::1 /market.html
+ERR: 无法加载控制器:Market
+
+[ 2016-05-06T09:55:53+08:00 ] ::1 /market.html
+ERR: 无法加载控制器:Market
+
+[ 2016-05-06T11:52:47+08:00 ] ::1 /portal/dslist/publish
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/publish.html
+
+[ 2016-05-06T11:55:26+08:00 ] ::1 /public/tigo-ui.css
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T11:55:26+08:00 ] ::1 /public/style.css
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T12:02:41+08:00 ] 119.128.42.174 /
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-06T12:02:58+08:00 ] 116.4.31.13 /
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+
+[ 2016-05-06T14:18:22+08:00 ] 116.4.31.13 /portal/dslist/publish
+ERR: Think\Controller:assgin方法不存在！
+
+[ 2016-05-06T14:21:33+08:00 ] 101.226.51.228 //cdn.bootcss.com/angular.js/1.4.9/angular.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:21:33+08:00 ] 101.226.51.228 //cdn.bootcss.com/jquery/1.9.1/jquery.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:21:33+08:00 ] 101.226.51.228 //cdn.bootcss.com/respond.js/1.4.2/respond.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:21:34+08:00 ] 101.226.51.228 //cdn.bootcss.com/html5shiv/r29/html5.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:25:59+08:00 ] 14.17.29.85 //cdn.bootcss.com/jquery/1.9.1/jquery.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:25:59+08:00 ] 14.17.29.85 //cdn.bootcss.com/angular.js/1.4.9/angular.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:25:59+08:00 ] 14.17.29.85 //cdn.bootcss.com/respond.js/1.4.2/respond.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T14:25:59+08:00 ] 14.17.29.85 //cdn.bootcss.com/html5shiv/r29/html5.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T16:42:45+08:00 ] 116.4.31.13 /portal/post/post
+ERR: 无法加载控制器:Post
+
+[ 2016-05-06T16:44:44+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:45:09+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:46:09+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:46:21+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:46:47+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:46:57+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: SQLSTATE[HY000] [2002] ����Ŀ�����������ܾ����޷����ӡ�
+
+
+[ 2016-05-06T16:47:00+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:48:03+08:00 ] 116.4.31.13 /portal/dslist/dslist
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/dslist.html
+
+[ 2016-05-06T16:55:37+08:00 ] 101.226.89.122 //cdn.bootcss.com/angular.js/1.4.9/angular.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T16:55:37+08:00 ] 101.226.89.122 //cdn.bootcss.com/respond.js/1.4.2/respond.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T16:55:38+08:00 ] 101.226.89.122 //cdn.bootcss.com/html5shiv/r29/html5.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T17:01:29+08:00 ] 14.17.34.182 //cdn.bootcss.com/respond.js/1.4.2/respond.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T17:01:29+08:00 ] 14.17.34.182 //cdn.bootcss.com/angular.js/1.4.9/angular.min.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T17:01:29+08:00 ] 14.17.34.182 //cdn.bootcss.com/html5shiv/r29/html5.js
+ERR: 无法加载控制器:Cdn.bootcss.com
+
+[ 2016-05-06T18:33:52+08:00 ] 42.156.138.28 /publish.html
+ERR: 无法加载控制器:Publish
+

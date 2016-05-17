@@ -1,0 +1,3 @@
+[ 2016-04-28T18:51:29+08:00 ] ::1 /index.php?g=Admin&m=Menu&a=index&menuid=100
+NOTIC: D方法实例化没找到模型类Common\Model\AuthRuleModel
+

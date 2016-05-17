@@ -1,0 +1,143 @@
+@charset "utf-8";
+html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+html{font-size: 125%;}
+html,body{font-family:"Microsoft Yahei",sans-serif;width: 100%;height: 100%}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+input,select,textarea{font-size:100%}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0;width: 100%;}
+abbr,acronym{border:0;font-variant:normal}
+del{text-decoration:line-through}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}
+q:before,q:after{content:''}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+a,a:active,a:link{ color:inherit;text-decoration: none; }
+* {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;  box-sizing: border-box;  }
+*:before, *:after { -webkit-box-sizing: border-box;  -moz-box-sizing: border-box;  box-sizing: border-box;  }
+.clearfix:before,.clearfix:after{  display: table;  content: " ";  }
+.clearfix:after{  clear: both;  }
+.pull-left{ float: left !important;  }
+.pull-right{ float: right !important;}
+.text-left{ text-align: left !important;}
+.text-center{ text-align: center !important;}
+.text-right{ text-align: right !important;}
+.hidden{ display: none; visibility: hidden;}
+
+
+.tigo-btn{ height: 1.5rem;padding: 0 .2rem; border: solid 0.05rem #df9153;    background: transparent;
+    -webkit-border-radius: .2rem;
+    -moz-border-radius: .2rem;
+    border-radius: .2rem;
+    color:#df9153;
+}
+a.tigo-btn{
+    display: inline-block;
+    color: #df9153;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.tigo-head{
+    height: 2.5rem;
+    background: #fafafa;
+    font-size: .85rem;
+    border-bottom:solid 0.05rem #d1d1d1;
+}
+[data-search]{
+    background: url(../images/search.png) no-repeat transparent;
+    background-size: contain;
+    background-origin:content-box;
+    border: solid 0.05rem #bbb;
+    -webkit-border-radius: .05rem;
+    -moz-border-radius: .05rem;
+    border-radius: .05rem;
+    padding: .08rem .1rem;
+    width: 100%;
+}
+[data-checkbox]{
+    height: 1.7rem;
+    line-height: 1.7rem;
+    display: inline-block;
+    background: #fff;
+    border:solid 0.05rem #ccc;
+    font-size: .6rem;
+    text-align: center;
+    color:#aaa;
+    -webkit-border-radius: .1rem;
+    -moz-border-radius: .1rem;
+    border-radius: .1rem;
+}
+.tigo-radio-group{
+    display: table;
+    margin: 0 auto;
+}
+.tigo-radio-group > label.check-radio{
+    display: inline-block;
+    line-height: 1.65rem;
+    font-size: .8rem;
+    text-align: center;
+    border: solid 0.1rem rgb(226,36,46);
+    color:rgb(226,36,46);
+}
+.tigo-radio-group > label.active{
+    color:rgb(255,255,255);
+    background: rgb(226,36,46);
+}
+.tigo-radio-group > label.check-radio:first-child{
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+    border-right-width:0.05rem ;
+}
+.tigo-radio-group > label.check-radio:last-child{
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius: .3rem;
+    border-left-width:0.05rem ;
+}
+.tigo-radio-group > label.check-radio input{
+    display: none;
+}
+
+.tigo-input-group{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    padding:.6rem 0.45rem;
+    background: #fff;
+    font-size: .7rem;
+    margin-bottom: 0.05rem;
+    position: relative;
+}
+.tigo-input-group > label,.tigo-input-group > .label{
+    padding-right: .11rem;
+    display: inline-table;
+}
+.tigo-input-group > .input-item{
+    width: 100%;
+    border: none;
+    padding:.2rem .48rem;
+}
+
+.tigo-turn-circle{
+    height: 1.55rem;
+    width: 3rem;
+    background: #DE1C1C;
+    position: absolute;
+    border-radius: 1.5rem;
+    padding: .02rem .06rem;
+}
+.tigo-turn-circle .tigo-turn{
+    width: 1.5rem;
+    height: 1.4rem;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 2px rgba(10,10,10,.5);
+}

@@ -1,0 +1,12 @@
+.bar-nav .publish{
+    color: #df9153;
+    padding: 0 .7rem;
+    font-size: .7rem;
+    border: solid 0.05rem #df9153;
+}
+.bar-nav .back{
+    color: rgb(226,36,46);;
+}
+.bar-nav{
+    border-bottom: solid 0.05rem #DDDDDD;
+}

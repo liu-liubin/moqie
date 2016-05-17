@@ -1,0 +1,43 @@
+[ 2016-05-06T09:18:59+08:00 ] ::1 /market.html
+ERR: 无法加载控制器:Market
+
+[ 2016-05-06T09:55:53+08:00 ] ::1 /market.html
+ERR: 无法加载控制器:Market
+
+[ 2016-05-06T11:52:47+08:00 ] ::1 /portal/dslist/publish
+ERR: 模板不存在:themes/simplebootx/Portal/Dslist/publish.html
+
+[ 2016-05-06T11:55:26+08:00 ] ::1 /public/tigo-ui.css
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T11:55:26+08:00 ] ::1 /public/style.css
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T14:31:55+08:00 ] ::1 /portal/dslist/publish
+ERR: Think\Controller:assgin方法不存在！
+
+[ 2016-05-06T16:12:24+08:00 ] ::1 /public/tigo-ui.css
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T16:12:24+08:00 ] ::1 /public/style.css?555
+ERR: 无法加载控制器:Public
+
+[ 2016-05-06T16:12:35+08:00 ] ::1 /login
+ERR: 无法加载控制器:Login
+
+[ 2016-05-06T17:43:57+08:00 ] ::1 /portal/dslist/publish
+ERR: 1146:Table 'moqie.moqie_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `moqie_user`
+
+[ 2016-05-06T17:44:42+08:00 ] ::1 /portal/dslist/publish
+ERR: 1146:Table 'moqie.moqie_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `moqie_user`
+
+[ 2016-05-06T17:45:22+08:00 ] ::1 /portal/dslist/publish
+ERR: 1146:Table 'moqie.moqie_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `moqie_user`
+
+[ 2016-05-06T17:45:34+08:00 ] ::1 /portal/dslist/publish
+ERR: 1146:Table 'moqie.moqie_user' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `moqie_user`
+

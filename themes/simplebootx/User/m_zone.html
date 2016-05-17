@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>模切之家</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="__PUBLIC__/css/wm-ui.css" type="text/css" />
+    <style>
+        .wm-panel{font-size: .7rem;padding:0 .6rem;}
+        .wm-panel > .title{font-weight: 600;padding: .5rem 0rem;margin: 0;}
+        .wm-panel > .title > .small{font-size: .45rem;color:#999;}
+        .wm-panel > .panel-body > .panel-item{padding: .6rem 0;border-bottom: solid 1px #ddd;}
+        .history{display: block;height: 2rem;width: 2rem; position: absolute;top:0;left:0;padding-left:1rem;}
+        .his-tit{
+            padding: .6rem .6rem;
+            font-size: .8rem;
+            border-top:solid .6rem #e9e9e9;
+            border-bottom: solid 1px #eee;
+            margin-top: -1px;
+        }
+        .history-list{font-size: .7rem;}
+        .history-list li{position:relative;padding: 0 .6rem;}
+        .history-list li .his-cont{padding:.8rem 0 0rem 3.8rem;}
+        .history-list li .title{padding-left:.1rem;margin-bottom: .4rem;border-bottom:dashed 1px #AAA;background: url("images/circle.png") no-repeat;background-size: contain;position:relative;padding-left:1rem;padding-bottom:.13rem;}
+		.history-list li .type{position:absolute;top:-0.12rem;width:1rem;height:1rem;line-height:1rem;border-radius:50%;background-color:rgb(120,163,102);left:0;text-align:center;color:#fff;}
+        .history-list li .img{width: 3.2rem;position:absolute;top:.7rem;}
+        .history-list li .tags{color:#F18869;margin: .25rem 0;}
+        .history-list li .tags span{border:solid 1px #F18869;line-height: .8rem;display: inline-block;padding: 0 .33rem;}
+        .history-list li .price{color:#F18869;}
+        .history-list li .other{position:relative;padding: .5rem 0;color:#aaa;font-size:.55rem;height:1rem;}
+        .history-list li .other .txt{position:absolute;}
+        .history-list li .other .txt:first-child{top:0;left: 0;}
+        .history-list li .other .txt:last-child{top:0;right: 0;}
+		.m-head{
+            background: url("__PUBLIC__/images/person.jpg") no-repeat;
+            background-size: 100%;
+            height:8rem;
+            padding: 0 .6rem;
+        }
+        .m-preview{
+            height:4rem;
+			width:4rem;
+			    position: relative;
+    left: 50%;
+    z-index: 99;
+    top: 42%;
+    /* transform: translateX(-50%); */
+    transform: translate(-50%,-50%);
+	border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<a class="history" href="javascript:history.back();"><i class="fa fa-angle-left" style="font-size:2rem;color:#fff"></i></a>
+<header class="m-head">
+    <div class="m-preview" style="background:#dddddd url({$user.avatar}) no-repeat;background-size:contain;">   
+    </div>
+    <h5 style="
+    text-align: center;
+    position: relative;
+    bottom: -19%;
+    z-index: 99;
+    font-size: .7rem;
+">{$user.user_nicename}</h5>
+</header>
+<div class="wm-panel">
+    <h3 class="title">基本信息 <span class="small"  >0人访问过</span></h3>
+    <div class="panel-body">
+        <div class="panel-item"><span style="color: #999" >公司：</span>{$user.companyname}</div>
+        <div class="panel-item"><span style="color: #999" >位置：</span>{$user.address}</div>
+        <div class="panel-item"><span style="color: #999" >认证：</span>{$user.company_status}</div>
+    </div>
+</div>
+
+<h3 class="his-tit">供应历史</h3>
+<ul class="history-list">
+	<foreach name="supply" item="vo">
+		<li class="clearfix " style="border-bottom:solid .1rem #eee;">
+        <a href="{:UU('portal/dslist/dslist_detail')}&id={$vo.id}">
+            <img class="img" src="{$vo.img1}" />
+        <div class="his-cont">
+            <h3 class="title" ><span class="type">供</span> {$vo.post_title}</h3>
+            <h5 class="tags"><foreach name="vo['tags']" item="v"><span>{$v.title}</span>&nbsp; </foreach></h5>
+            <if condition="$vo.price == '面议'"><h5 class="price">{$vo.price}</h5>
+            <else /><h5 class="price">{$vo.price}元/{$vo.unit}</h5>
+            </if>
+        </div>
+        </a>
+        <h5 class="other"><div class="txt">{$vo.companyname}</div>  <div class="txt">{$vo.post_modified}</div></h5>
+    </li>
+	</foreach>
+</ul>
+<h3 class="his-tit">需求历史</h3>
+<ul class="history-list">
+	<foreach name="demand" item="vo">
+		<li class="clearfix ">
+        <a href="{:UU('portal/dslist/dslist_detail')}&id={$vo.id}">
+            <img class="img" src="{$vo.img1}" />
+        <div class="his-cont">
+            <h3 class="title" ><span class="type">需</span> {$vo.post_title}</h3>
+            <h5 class="tags"><foreach name="vo['tags']" item="v"><span>{$v.title}</span>&nbsp; </foreach></h5>
+            <h5 class="price">{$vo.num}{$vo.unit}</h5>
+        </div>
+        </a>
+        <h5 class="other"><div class="txt">{$vo.companyname}</div>  <div class="txt">{$vo.post_modified}</div></h5>
+    </li>
+	</foreach>
+</ul>
+</body>
+</html>

@@ -1,0 +1,97 @@
+[ 2016-05-09T10:29:27+08:00 ] 116.4.29.100 /USER
+ERR: 无法加载控制器:Index
+
+[ 2016-05-09T10:30:41+08:00 ] 116.4.29.100 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003907s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T10:30:59+08:00 ] 116.4.29.100 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T10:32:33+08:00 ] 116.4.180.99 /index.php?g=User&m=profile&a=avatar_update
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001953s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0049s ]
+SQL: SELECT `user_status` FROM `moqie_users` WHERE `id` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moqie_users` [ RunTime:0.0049s ]
+SQL: UPDATE `moqie_users` SET `avatar`='572ff6b9dc7ec.jpg' WHERE `id` = '1' [ RunTime:0.0010s ]
+
+[ 2016-05-09T10:32:34+08:00 ] 116.4.180.99 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001953s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004883s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:41:09+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:42:08+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:42:11+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002929s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:42:16+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:42:33+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002929s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:42:35+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.001953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:43:06+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000976s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:43:08+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
+[ 2016-05-09T20:46:34+08:00 ] 116.4.47.199 /index.php?g=user&m=index&a=is_login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000976s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002930s ]
+NOTIC: [8] Undefined index: url D:\test\moqie\application\Common\Controller\AppframeController.class.php 第 24 行.
+
