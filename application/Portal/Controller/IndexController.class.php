@@ -42,8 +42,8 @@ class IndexController extends HomebaseController {
             ->join(C ( 'DB_PREFIX' )."dslist b ON a.object_id = b.id")
             ->limit('0,'.$limit1)
             ->where($map)
-            ->field('term_id,post_title as title,post_keywords as content,id,post_hits,smeta,post_modified,tag,ds,post_author,price,unit,img1,img2')
-            ->order("b.post_modified DESC")->select();
+            ->field('term_id,post_title as title,post_keywords as content,id,post_hits,smeta,post_modified,tag,ds,post_author,price,unit,img1,img2,num,companyname,switch')
+            ->order("id DESC")->select();
 
         //关注列表
         $uid= sp_get_current_user();
@@ -61,17 +61,33 @@ class IndexController extends HomebaseController {
                 $dslist[$k]["img1"]="/". $v["img1"];
             }
             $user = $user_model->where("id=".$v['post_author'])->find();
-            $dslist[$k]["companyname"]=$user['companyname'];
+            //$dslist[$k]["companyname"]=$user['companyname'];
             $dslist[$k]["mobile"]=$user['mobile'];
             $dslist[$k]["ds"]= $v["ds"]==1?"供":"需";//供需标签
             $dslist[$k]['url']=U("portal/dslist/dslist_detail",array('id'=>$v["id"]));
             //tag处理
-            $tags = explode(',',$v['tag']);
-            foreach($tags as $k1 => $v1){
-                if($v1){
-                    $dslist[$k]["tags"][$k1]["title"] = $v1;
-                }
+            //$tt = explode(',',strtr($v['tag'],"，",","));
+            $tt = explode(',',str_replace("，",",",$v['tag']));
+            $ttt = array();
+            $tags = array();
+            // var_dump($tags);
+            foreach($tt as $k1 => $v1){
+                array_push($ttt,$tt[$k1]);
             }
+
+            if(count($ttt)>4){
+                for($i=0;$i<4;$i++){
+                    array_push($tags,$ttt[$i]);
+                }
+            }else{
+                $tags = $ttt;
+            }
+
+            
+
+            $dslist[$k]["tags"] = $tags;
+
+
             $dslist[$k]['isfav'] = 0;//未关注返回0
             //处理是否已经关注
             if($favlist){
@@ -87,7 +103,9 @@ class IndexController extends HomebaseController {
 
 
         }
-      // dump($dslist);die();
+//       dump($sides);die();
+
+        // dump($dslist);die();
 
 		$this->assign('sides',$sides);
 		$this->assign('dslist',$dslist);

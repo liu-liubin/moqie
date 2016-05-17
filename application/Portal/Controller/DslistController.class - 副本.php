@@ -61,7 +61,7 @@ class DslistController extends HomebaseController {
 //        dump($_GET);die();
 
         //最新供应
-        $limit1 = 10;
+        $limit1 = 4;
         $term_relationships_model = M('TermRelationships');
         $dslist=$term_relationships_model
             ->alias("a")
@@ -85,7 +85,7 @@ class DslistController extends HomebaseController {
             if($v["img1"]==null || $v["img1"]==""){
                 $dslist[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
             }else{
-                $dslist[$k]["img1"]="/". $v["img1"];
+                $dslist[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__"). $v["img1"];
             }
             $user = $user_model->where("id=".$v['post_author'])->find();
             $dslist[$k]["companyname"]=$user['companyname'];
@@ -93,7 +93,7 @@ class DslistController extends HomebaseController {
             $dslist[$k]["ds"]= $v["ds"]==1?"供":"需";//供需标签
             $dslist[$k]['url']=U("portal/dslist/dslist_detail",array('id'=>$v["id"]));
             //tag处理
-            $tags = explode(',',preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$v['tag']));
+            $tags = explode(',',$v['tag']);
             foreach($tags as $k1 => $v1){
                 if($v1){
                     $dslist[$k]["tags"][$k1]["title"] = $v1;
@@ -141,7 +141,7 @@ class DslistController extends HomebaseController {
             if($v["img1"]==null || $v["img1"]==""){
                 $dslist1[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
             }else{
-                $dslist1[$k]["img1"]="/". $v["img1"];
+                $dslist1[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__"). $v["img1"];
             }
             $user = $user_model->where("id=".$v['post_author'])->find();
             $dslist1[$k]["companyname"]=$user['companyname'];
@@ -149,10 +149,10 @@ class DslistController extends HomebaseController {
             $dslist1[$k]["ds"]= $v["ds"]==1?"供":"需";//供需标签
             $dslist1[$k]['url']=U("portal/dslist/dslist_detail",array('id'=>$v["id"]));
             //tag处理
-            $tags = explode(',',preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$v['tag']));
+            $tags = explode(',',$v['tag']);
             foreach($tags as $k1 => $v1){
                 if($v1){
-                    $dslist[$k]["tags"][$k1]["title"] = $v1;
+                    $dslist1[$k]["tags"][$k1]["title"] = $v1;
                 }
             }
             $dslist1[$k]['isfav'] = 0;//未关注返回0
@@ -180,6 +180,7 @@ class DslistController extends HomebaseController {
         $this->display(":market");
 
     }
+
     /**
      * 供需默认列表上拉加载
      * @Author   YHX
@@ -188,20 +189,19 @@ class DslistController extends HomebaseController {
      */
     public function dslist_getauto(){
 
-        $page = intval($_GET['page']);  //获取请求的页数
+        
 
         //查询条件
         $map['post_status']  = 1;
         $where_name =$_GET['name'] ? $map['post_title']=array('like','%'.$_GET['name'].'%') : "";
         $where_termid =$_GET['termid'] ? $map['term_id']=$_GET['termid'] : "";
 
-
+        $page = intval($_GET['page']);  //获取请求的页数
         $start =$page*10;//偏移量
-
-
+        $limit = 10;
         // $dslist_obj = M('Dslist');
         // $order = "post_modified Desc";
-        $limit = 10;
+        
 
         $term_relationships_model = M('TermRelationships');
         $dslist=$term_relationships_model
@@ -224,40 +224,18 @@ class DslistController extends HomebaseController {
      */
     public function dslist_detail(){
         $id = intval($_GET['id']);  //获取请求的id
-        	
         $dslist_model = M('Dslist');
         $dslist = $dslist_model
         ->alias("a")
         ->join(C ( 'DB_PREFIX' )."users b ON a.post_author = b.id")
-        ->field('a.id,avatar,post_title,post_content,a.companyname,specification,description,num,switch,img1,img2,ds,unit,truename,mobile,price,tag,address')
+        ->field('a.id,avatar,post_title,post_content,a.companyname,specification,description,num,switch,img1,ds,unit,truename,mobile')
         ->where(array("a.id"=>$id))->find();
-        if($dslist['img1']==null || $dslist['img1']==""){
-            $dslist['img1']=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
+        if($dslist['avatar']==null || $dslist['avatar']==""){
+            $dslist['avatar']=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
         }else{
-            $dslist['img1']="/".$dslist['img1'];
+            $dslist['avatar']=C("TMPL_PARSE_STRING.__UPLOAD__").$dslist['avatar'];
         }
-        if($dslist['img2']==null || $dslist['img2']==""){
-            $dslist['img2']=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
-        }else{
-            $dslist['img2']="/".$dslist['img2'];
-        }
-        //判断是否加关注
-        $fav_model = M("UserFavorites");
-        $fav = $fav_model->where(array("object_id"=>$id,"uid"=>sp_get_current_userid()))->find();
-        if($fav){
-        	$dslist['isfav'] ="已关注";
-        }
-        else{
-        	$dslist['isfav'] ="+关注";
-        }
-        //tag处理
-        $tags = explode(',',preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$dslist['tag']));
-        foreach($tags as $k1 => $v1){
-            if($v1){
-                $dslist["tags"][$k1]["title"] = $v1;
-            }
-        }
-         //dump($dslist);die();
+        // dump($dslist);die();
 
         $this->assign('dslist',$dslist);
         if($dslist['ds']==1){
@@ -276,25 +254,6 @@ class DslistController extends HomebaseController {
      * @return   [type]                   [description]
      */
     public function publish(){
-    	//未登录不能操作
-        if(sp_get_current_userid()==0 || sp_get_current_user()==null){
-            // $this->error("请先登录！",U("user/login/index"));
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="请先登录！";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-        }
-        //非认证企业用户不能发布
-        $user_model = M('Users');
-        $user=$user_model->where(array("id"=>sp_get_current_userid()))->find();
-        $c_status =$user['company_status'];
-        if($c_status!=4){
-        	// $this->error("非认证企业用户不能发布",U("portal/dslist/dslist"));
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="非认证企业用户不能发布";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-        }
         //分类列表
         $terms_obj = M('Terms');
         $order = "listorder ASC";
@@ -323,81 +282,122 @@ class DslistController extends HomebaseController {
      */
     public function do_publish(){
         //未登录不能操作
-        if(sp_get_current_userid()==0 || sp_get_current_user()==null){
-            // $this->error("请先登录！",U("user/login/index"));
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="请先登录！";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
+        if(sp_get_current_user()==0 || sp_get_current_user()==null){
+            $this->error("请先登录！");
         }
         if(IS_POST){
-
-            if($_FILES['file1']['name']){
-                $filename1 = strtotime(date('Y-m-d')) . '-' . rand(1,9999);
-                $data['img1'] = 'Uploads/publish/'. $filename1;
-            }
-            if($_FILES['file2']['name']){
-                $filename2 = strtotime(date('Y-m-d')) . '-' . rand(1,9999);
-                $data['img2'] = 'Uploads/publish/'. $filename2;
-            }
-
-
-            $destination1 = './uploads/publish/'. $filename1;
-            $destination2 = './uploads/publish/'. $filename2;
-            move_uploaded_file( $_FILES['file1']['tmp_name'] , $destination1 );
-            move_uploaded_file( $_FILES['file2']['tmp_name'] , $destination2 );
-
             $data['companyname'] = $_POST["companyname"];
             $data['post_title'] = $_POST["title"];
             $data['switch'] = $_POST["switch"];
-            $data['term_id'] = $_POST["term_id"];
-            $data['price'] = is_numeric($_POST["price"])?$_POST["price"]:"面议";
+            $data['term_id'] = $_POST["termid"];
+            $data['price'] = $_POST["price"];
             $data['num'] = $_POST["num"];
             $data['unit'] = $_POST["unit"];
             $data['tag'] = $_POST["tag"];
+            $data['specification'] = $_POST["specification"];
             $data['post_content'] = htmlspecialchars_decode($_POST["content"]);
-            $data['ds'] = $_POST["type"];
-            // $data['img1'] = $_POST["img1"];
-            // $data['img2'] = $_POST["img2"];
+            $data['ds'] = $_POST["type"]=="feed"?1:2;
+            $data['img1'] = $_POST["img1"];
+            $data['img2'] = $_POST["img2"];
             $data['post_date'] =date ( 'Y-m-d H:i:s' );
             $data['post_modified'] =date ( 'Y-m-d H:i:s' );
             $data['post_author']=sp_get_current_userid();
             $data['post_status'] = 0;
-            $data['specification'] = $_POST['specification'];
+
+            if(empty($_POST['termid'])){
+                $this->error("请至少选择一个分类栏目！");
+            }
 
 
             $dslist_model = M('Dslist');
             $term_relationships_model = M('TermRelationships');
             $result=$dslist_model->add($data);
-            
             if ($result) {
-				
-                $allOk = $term_relationships_model->add(array("term_id"=>intval($data['term_id']),"object_id"=>$result));
-                if($allOk){
-                	// $this->success("信息添加成功");
-                    $tips['status']=1;//0为失败，1为成功
-                    $tips['info']="信息发布成功";//错误信息
-                    $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/dslist/dslist');//跳转地址,发生错误不需要地址
-                    $this->ajaxReturn($tips);
-                }
-                else{
-                	// $this->error("信息添加失败");
-                    $tips['status']=0;//0为失败，1为成功
-                    $tips['info']="信息添加失败";//错误信息
-                    // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-                    $this->ajaxReturn($tips);
-                }
+                // foreach ($_POST['term'] as $mterm_id){
+                //   $this->term_relationships_model->add(array("term_id"=>intval($mterm_id),"object_id"=>$result));
+                // }
+                $term_relationships_model->add(array("term_id"=>intval($data['term_id']),"object_id"=>$result));
+                $this->success("添加成功");
+                // var_dump($data);
+                // echo '------------------------------------';
+                // var_dump($_FILES);
             } else {
-                // echo 0;
-                // $this->error("信息添加失败");
-                $tips['status']=0;//0为失败，1为成功
-                $tips['info']="信息添加失败";//错误信息
-                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-                $this->ajaxReturn($tips);
+                $this->error("添加失败");
             }
         }
     }
-    
+
+
+
+    public function upload(){
+        $upload = new \Think\Upload();
+        $upload->maxSize   =     3145728 ;
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');
+        $upload->rootPath  =     './dslist/'; 
+        $upload->savePath  =     ''; 
+        // 上传文件 
+        $info   =   $upload->upload();
+        if(!$info) {// 上传错误提示错误信息
+            $this->error($upload->getError());
+        }else{// 上传成功
+            $this->success('上传成功！');
+        }
+    }
+
+    //YHX 20160513 拿样页面
+    public function sample(){
+        $object_id =$_GET['id'];
+        if($object_id==null ||$object_id==""){
+            $this->error("非法数据");
+        }
+        $uid=sp_get_current_userid();
+        $user_model = M("Users");
+        $user = $user_model->where(array("id"=>$uid))->find();
+        $this->assign("object_id",$object_id);
+        $this->assign("user",$user);
+        $this->display(":proneed");
+    }
+
+    //YHX 20160513 拿样
+    public function do_sample(){
+        if(IS_POST){
+            // dump($_POST);die();
+            $picker = $_POST['picker'];
+            $companyname = $_POST['companyname'];
+            $mobile = $_POST['mobile'];
+            $address = $_POST['address'];
+            $uid = sp_get_current_userid();
+            $now = date ( 'Y-m-d H:i:s' );
+            $object_id = $_POST['object_id'];
+
+            $data['picker'] = $picker;
+            $data['companyname'] = $companyname;
+            $data['mobile'] = $mobile;
+            $data['re_address'] = $address;
+            $data['uid'] = $uid;
+            $data['addtime'] = $now;
+            $data['object_id'] = $object_id;
+            //数据不能为空
+            if($picker=="" || $picker==null || $companyname=="" || $companyname==null || $mobile=="" || $mobile==null || $address=="" || $address==null){
+                $this->error("数据不能为空");
+            }
+            else{
+                $sample_model = M("sample");
+                $sample = $sample_model->add($data);
+                if($sample){
+                    $this->success("申请拿样成功");
+                }
+                else{
+                    $this->error("申请失败");
+                }
+            }
+
+        }
+        else{
+            $this->error("非法请求");
+        }
+    }
+
     /**
      * 筛选供需列表
      * @Author   jewey
@@ -412,7 +412,9 @@ class DslistController extends HomebaseController {
      */
     public function filter_dslist()
     {
+        
         $user_model = M("Users");
+
         //查询条件 供应
         if (isset($_GET['page']) && trim($_GET['page']) != '') {
             $page = intval($_GET['page'])-1;  //获取请求的页数,
@@ -420,30 +422,23 @@ class DslistController extends HomebaseController {
             $page = 0;
         }
 
-        $limit = 10;//偏移量
+        $limit = 4;//偏移量
         $start =$page*$limit;
         
         $map['post_status']  = 1;//已审核才显示
-        if (isset($_GET['name']) && trim($_GET['name']!='')) {//
+        if (isset($_GET['name']) && trim($_GET['name']!='')) {
             $map['post_title']=array('like','%'.$_GET['name'].'%');
         }
         if (isset($_GET['termid']) && trim($_GET['termid']!='')) {
-        	if($_GET['termid']<30){
-        		$map['path']=array('like','%'.$_GET['termid'].'%');
-        	}
-        	else{
-        		$map['a.term_id']=$_GET['termid'];
-        	}
-        }else{
-			$map['a.term_id'] =array("gt",5);
-		}
+            $map['term_id']=$_GET['termid'];
+        }
         if (isset($_GET['ds']) && trim($_GET['ds']!='')) {
             $map['ds']=$_GET['ds'];//获取供或需
         }
         
-        
         // dump($start);
-        // dump($map);die();        
+        // dump($map);
+        // die();        
        // dump($_GET);
        // die();
 
@@ -453,11 +448,10 @@ class DslistController extends HomebaseController {
         $dslist=$term_relationships_model
             ->alias("a")
             ->join(C ( 'DB_PREFIX' )."dslist b ON a.object_id = b.id")
-			->join(C ( 'DB_PREFIX' )."terms c ON a.term_id = c.term_id")
             ->limit($start,$limit)
             ->where($map)
-            // ->field('post_title as title,post_keywords as content,post_modified as time,price,unit as prefix,img1 as cover,companyname')
-            ->field('a.term_id,post_title as title,post_keywords as content,id,post_hits,smeta,post_modified,tag,ds,post_author,price,unit,img1,img2,companyname,switch,num')
+            // ->field('post_title as title,post_keywords as content,post_modified as time,price,unit as prefix,img1 as cover')
+            ->field('term_id,post_title as title,post_keywords as content,id,post_hits,smeta,post_modified,tag,ds,post_author,price,unit,img1,img2')
             ->order("a.listorder ASC,b.post_modified DESC")->select();
 
         //关注列表
@@ -473,195 +467,58 @@ class DslistController extends HomebaseController {
             if($v["img1"]==null || $v["img1"]==""){
                 $dslist[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__")."nopic.gif";
             }else{
-                $dslist[$k]["img1"]="/" .$v["img1"];
+                $dslist[$k]["img1"]=C("TMPL_PARSE_STRING.__UPLOAD__"). $v["img1"];
             }
             $user = $user_model->where("id=".$v['post_author'])->find();
-            //$dslist[$k]["companyname"]=$user['companyname'];
+            $dslist[$k]["companyname"]=$user['companyname'];
             $dslist[$k]["mobile"]=$user['mobile'];
             $dslist[$k]["ds"]= $v["ds"]==1?"供":"需";//供需标签
             $dslist[$k]['url']=U("portal/dslist/dslist_detail",array('id'=>$v["id"]));
             //tag处理
-            $tags = explode(',',preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$v['tag']));
-            //echo(preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$v['tag']));die();
+            $tags = explode(',',$v['tag']);
             foreach($tags as $k1 => $v1){
                 if($v1){
                     $dslist[$k]["tags"][$k1]["title"] = $v1;
                 }
             }
-            $dslist[$k]['isfav'] = '+关注';//未关注返回0
+            $dslist[$k]['isfav'] = 0;//未关注返回0
             //处理是否已经关注
             if($favlist){
                 foreach($favlist as $k2 => $v2){
                     if($v['id']==$v2['object_id']){
-                        $dslist[$k]['isfav'] = '已关注';//已关注返回1
+                        $dslist[$k]['isfav'] = 1;//已关注返回1
                     }
                 }
             }
         }
-	echo json_encode(($dslist));
-	exit();	
-/*		
-		if(IS_AJAX){
-			echo json_encode(($dslist));
-			exit();				
-		}else{
-			$this->assign('dslist',$dslist);
-			$this->display(":market");		
-		}
-  */
+        echo json_encode(($dslist));
+        exit();
     }
-    
-    //YHX20160514 拿样页面
-    function sample(){
-    	//如果没有登录不能拿样
-        if(!sp_is_user_login()) {
-            // $this->error("请先登录","/user/login/index");
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="请先登录";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-        }
-    	$uid = sp_get_current_userid();
-        $user_model = M("Users");
-        $user = $user_model->where(array("id"=>$uid))->find();
-    	$id = $_GET["id"];
-    	if($id==null || $id=="" || $id=="0"){
-    		// $this->error("数据错误");
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="数据错误";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-    	}
-    	$this->assign("object_id",$id);
-    	$this->assign("user",$user);
-    	$this->display(":proneed");
-    }
-    
-    //YHX20160514 拿样
-    function do_sample(){
-    	//如果没有登录不能拿样
-    	$uid = sp_get_current_userid();
-        if(!sp_is_user_login()) {
-            // $this->error("请先登录","/user/login/index");
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="请先登录";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-        }
-        
-        if(!IS_POST){
-        	// $this->error("非法数据","/user/login/index");
-            $tips['status']=0;//0为失败，1为成功
-            $tips['info']="非法数据";//错误信息
-            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-            $this->ajaxReturn($tips);
-        }
-        else{
-        	$picker = $_POST['picker'];
-        	$companyname = $_POST['companyname'];
-        	$mobile = $_POST['mobile'];
-        	$address = $_POST['address'];
-        	$uid = $uid;
-        	$object_id = $_POST['object_id'];
-        	$addtime = date ( 'Y-m-d H:i:s' );
-        	
-        	$data['picker'] = $picker;
-        	$data['companyname'] = $companyname;
-        	$data['re_address'] = $address;
-        	$data['uid'] = $uid;
-        	$data['object_id'] = $object_id;
-        	$data['addtime'] = $addtime;
-        	$data['mobile'] = $mobile;
-        	
-        	$sample_model =M('Sample');
-        	//判断是否已经拿过该产品
-        	$is_pick = $sample_model->where(array("uid"=>$uid,"object_id"=>$object_id))->find();
-        	if($is_pick){
-        		// $this->error("你已申请过改产品！");
-                $tips['status']=0;//0为失败，1为成功
-                $tips['info']="你已申请过改产品！";//错误信息
-                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-                $this->ajaxReturn($tips);
-        	}else{
-        		$sample = $sample_model->add($data);
-	        	if($sample){
-	        		//发送信息给供应商
-	        		//获取供应商的userid,产品名
-	        		$dslist_model = M('Dslist');
-	        		$dslist =$dslist_model->where(array("id"=>$object_id))->find();
-	        		$feed_uid=$dslist['post_author'];
-	        		$feed_title=$dslist['post_title'];
-	        		//获取供应商的电话,公司名，nicename
-	        		$user_model = M('Users');
-	        		$feed = $user_model->where(array("id"=>$feed_uid))->find();
-	        		$feed_mobile = $feed['mobile'];
-	        		//dump($feed);die();
-	        		//$feed_companyname = $feed['companyname'];
-	        		//$feed_nicename = $feed['user_nicename'];
-	        		//拼装短信内容
-	        		$contents="拿样通知:".$companyname."的".$picker."先生"."提交了".$feed_title."产品的拿样申请，电话为".$mobile."，地址为".$address."，请尽快处理！";
-	        		//发送短信
-	        		$result=$this->send_sample_sms($feed_mobile,$contents);
-	        		if($result>0){
-	        			// $this->success("拿样成功！");
-                        $tips['status']=1;//0为失败，1为成功
-                        $tips['info']="拿样成功！";//错误信息
-                        $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/dslist/dslist_detail',array("id"=>$object_id));//跳转地址,发生错误不需要地址
-                        $this->ajaxReturn($tips);
-	        		}
-	        		else{
-	        			// $this->error("拿样成功,但信息发送失败，请联系服务商");
-                        $tips['status']=0;//0为失败，1为成功
-                        $tips['info']="拿样成功,但信息发送失败，请联系服务商";//错误信息
-                        // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-                        $this->ajaxReturn($tips);
-	        		}
-	        		
-	        	}
-	        	else{
-	        		// $this->error("拿样失败！");
-                    $tips['status']=0;//0为失败，1为成功
-                    $tips['info']="拿样失败！";//错误信息
-                    // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
-                    $this->ajaxReturn($tips);
-	        	}
-        	}
-        }
-    }
-    
-    //YHX20160515 发送拿样短信
-    function send_sample_sms($feed_mobile,$contents){
-    	//dump($feed_mobile);
-    	//dump($contents);
-    	//die();
-        $username = "clymumo";
-        $pwd = "hyx75tr8";
-        $password = md5($username."".md5($pwd));
-        $mobile = $feed_mobile;
-        $content = $contents;
-        $url = "http://sms-cly.cn/smsSend.do?";
 
-        $param = http_build_query(
-            array(
-                'username'=>$username,
-                'password'=>$password,
-                'mobile'=>$mobile,
-                'content'=>$content //YHX
 
-            )
-        );
-//        dump($param);die();
-        $ch = curl_init();
-        curl_setopt($ch,CURLOPT_URL,$url);
-        curl_setopt($ch,CURLOPT_HEADER,0);
-        curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-        curl_setopt($ch,CURLOPT_POST,1);
-        curl_setopt($ch,CURLOPT_POSTFIELDS,$param);
-        $result = curl_exec($ch);
-        curl_close($ch);
 
-        return $result;
-    }
+
+
+
+    //YHX
+//     public function upload(){
+// //        echo "123";die();
+//         dump($_POST);
+//         die();
+//         $upload = new \Think\Upload();// 实例化上传类
+//         $upload->maxSize   =     3145728 ;// 设置附件上传大小
+//         $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+//         $upload->savePath  =      './dslist/'; // 设置附件上传目录
+// //        $upload->saveName = time().'_'.mt_rand();
+//         // 上传文件
+//         $info   =   $upload->upload();
+//         if(!$info) {// 上传错误提示错误信息
+//             $this->error($upload->getError());
+//         }else{// 上传成功
+//             $this->success('上传成功！');
+//         }
+//     }
+
 }
 
 

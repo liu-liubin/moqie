@@ -28,7 +28,7 @@ class AdminDslistController extends AdminbaseController {
 	 * @DateTime 2016-04-29T10:08:12+0800
 	 * @return   [type]                   [description]
 	 */
-	function index(){
+	function index($key=""){
 		
     	// $count= $this->dslist_model->count();
     	// $page = $this->page($count, 20);
@@ -36,17 +36,36 @@ class AdminDslistController extends AdminbaseController {
     	// ->order("post_date DESC")
     	// ->limit($page->firstRow . ',' . $page->listRows)
     	// ->select();
-
+		//添加搜索关键词
+		if ($key != "") {
+			$map['companyname']=array('like','%'.$key.'%') ;
+	        $map['post_title']=array('like','%'.$key.'%') ;
+	        if ($key == '供应') {
+	        	$map['ds'] = 1;	
+	        }elseif ($key == '需求') {
+	        	$map['ds'] = 2;	
+	        }
+	        $map['_logic'] = 'or';
+			$where['_complex'] = $map;
+		}
+		
+		$where['term_id'] =array("gt",5);
+		
+		//dump($key);dump($map);//exit();
 		$count=$this->term_relationships_model
 		->alias("a")
 		->join(C ( 'DB_PREFIX' )."dslist b ON a.object_id = b.id")
+		->where("term_id >5")
 		->count();
 
 		$lists=$this->term_relationships_model
 		->alias("a")
+		->where($where)		
 		->join(C ( 'DB_PREFIX' )."dslist b ON a.object_id = b.id")
 		->limit($page->firstRow . ',' . $page->listRows)
-		->order("a.listorder ASC,b.post_modified DESC")->select();
+		->order("a.listorder ASC,b.post_modified DESC")
+		//->where("term_id >5")
+		->select();
 			
 		$page = $this->page($count, 20);
 
@@ -82,7 +101,8 @@ class AdminDslistController extends AdminbaseController {
             $rst = $this->dslist_model->where(array("id"=>$id))->find();
             if ($rst) {
             	$term_relationship = M('TermRelationships')->where(array("object_id"=>$id,"status"=>1))->getField("term_id",true);
-				$term=$this->terms_model->where(array("id"=>$term_relationship['term_id']))->find();
+				//$term=$this->terms_model->where(array("id"=>$term_relationship['term_id']))->find();
+				$term=$this->terms_model->where("term_id=".$term_relationship[0])->find();
 				$users_obj = M("Users");
 				$users_data=$users_obj->field("id,user_login")->where("user_status=1")->select();
 				$users=array();

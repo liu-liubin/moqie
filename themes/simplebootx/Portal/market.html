@@ -63,10 +63,10 @@
             </div>
         </div>
         <div ng-style="loadHTML" style="display: block;text-align: center;padding-top: 2rem;"><i style="font-size: 1.6rem" class="fa fa-spinner fa-spin"></i></div>
-        <ul class="product-list market-list" ng-style="contentHTML"  style="display: none;">
+        <ul class="product-list market-list" ng-style="contentHTML"  style="display: none;" ng-controller="tipsCtrl">
             <li class="clearfix " ng-repeat="x in productList" >
                 <div class="pro-right pull-right">
-                    <a href='{:U("user/favorite/do_dsfav")}&id={{x.id}}'><button type="button" class="tigo-btn gz">{{x.isfav}}</button></a>
+                    <button data-url='{:U("user/favorite/do_dsfav")}&id={{x.id}}' data-html="已关注" ng-click="tips($event)" type="button" class="tigo-btn gz">{{x.isfav}}</button>
                     <a href="tel:{{x.mobile}}"><button type="button" class="tigo-btn phone"><i class="fa fa-phone "></i> </button></a>
                 </div>
                 <div class="pro-left ">
@@ -115,15 +115,10 @@
 </footer>
 <!---底部导航   end-->
 </body>
+<script type="text/javascript" ng-module="myApp" ng-ctrl="tipsCtrl" src="__PUBLIC__/angular.tips.js"></script>
 <script>
-    /*$(function(){
-        $(".sad-radio .check-radio").click(function(){
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-        })
-    })*/
-    var app = angular.module("myApp",[]);
-    app.controller("marketCtrl",function($scope,$location,$http){
+    var aapp = app || angular.module("myApp",[]);
+    aapp.controller("marketCtrl",function($scope,$location,$http){
         $scope.termId = ""; //初始化筛选分类ID
 		$scope.ngKeyword = '{$Think.get.name|default=""}';	//初始化筛选关键字
         /*$http.get('{:U("dslist/filter_dslist")}&ds=1').success(function(data){

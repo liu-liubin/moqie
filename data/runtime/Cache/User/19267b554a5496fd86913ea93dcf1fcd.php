@@ -38,7 +38,7 @@
             <input type="password" name="password" placeholder="请输入密码" />
         </div>
         <div class="text-right" style="font-size:.8rem;padding: .6rem;">
-            <a href="<?php echo U('user/login/forgot_password');?>" onclick="return tips(this)">忘记密码?</a>
+            <a data-url="<?php echo U('user/login/forgot_password');?>" ng-click="tips($event)" data-html="找回密码" >忘记密码?</a>
         </div>
         <div style="margin-top:1rem;padding:0 .6rem;">
         <button type="button" class="wm-btn btn-danger" ng-click="submit('form1')">登陆</button>
@@ -46,5 +46,5 @@
     </form>
 </section>
 </body>
-<script type="text/javascript" ng-module="apps" src="/public/angular.tips.js"></script>
+<script type="text/javascript" ng-module="apps" ng-ctrl="formCtrl" src="/public/angular.tips.js"></script>
 </html>

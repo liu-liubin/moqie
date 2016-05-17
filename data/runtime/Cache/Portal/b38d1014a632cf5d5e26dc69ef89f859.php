@@ -114,7 +114,7 @@
     <ul class="product-list" ng-controller="newCtrl">
         <li class="clearfix " ng-repeat="x in newList">
             <div class="pro-right pull-right">
-                <button type="button" class="tigo-btn gz" ng-click="attention(x.id)" ng-bind="x.attention"></button>
+                <button type="button" class="tigo-btn gz" data-url='<?php echo U("user/favorite/do_dsfav");?>&id={{x.id}}' data-html="已关注" ng-click="tips($event)" ng-bind="x.attention"></button>
                 <a href="{{x.mobile}}"><button type="button" class="tigo-btn phone"><i class="fa fa-phone "></i> </button></a>
             </div>
             <div class="pro-left ">
@@ -172,6 +172,7 @@
             transitionEnd: function(index, element) {}
         });
 </script>
+<script type="text/javascript" ng-module="myApp" ng-ctrl="newCtrl" src="/public/angular.tips.js"></script>
 <script>
     function getVendorPrefix() {
         // 使用body是为了避免在还需要传入元素
@@ -189,8 +190,8 @@
         }
     }
 
-    var app = angular.module("myApp",[]);
-    app.controller("myCtrl",function($scope){
+    //var app = angular.module("myApp",[]);
+    app.controller("myCtrl",function($scope,$http){
         $scope.yincang = true;
         //$scope.xc ={"display":"none"};
         $scope.selected = function($event){
@@ -207,11 +208,10 @@
         $scope.choice = function(val){
             $scope.choiceVal = val;
         }
-    })
-    app.controller("newCtrl",function($scope,$http){
+   // })
+    //app.controller("newCtrl",function($scope,$http){
         $scope.newList = angular.fromJson('<?php echo (json_encode($dslist)); ?>');
         angular.forEach($scope.newList,function(v,k){
-			console.log(v.tags);
             if(v.isfav==1){
                 $scope.newList[k].attention = "已关注";
             }else{
@@ -225,14 +225,6 @@
         })
         //var url = '<?php echo U("user/favorite/do_dsfav");?>';
         $scope.attentionVal = "+关注";
-        $scope.attention = function(id){
-            //$scope.attentionVal = "已关注";
-            //$http.post('<?php echo U("user/favorite/do_dsfav");?>',{id:id}).success(function(data){
-             //   if(data.status==9){
-                    location.href = '<?php echo U("user/favorite/do_dsfav");?>&id='+id;
-            //    }
-           // })
-        }
     })
 </script>
 </body>

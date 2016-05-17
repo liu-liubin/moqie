@@ -47,8 +47,11 @@ class RegisterController extends HomebaseController {
 	private function _do_mobile_register(){
 	     
 	    if($this->check_mcode()==0){
-	             $this->error("手机验证码错误！");
-	            //$this->ajaxReturn();
+	             // $this->error("手机验证码错误！");
+	            $tips['status']=0;//0为失败，1为成功
+	            $tips['info']="手机验证码错误！";//错误信息
+	            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+	            $this->ajaxReturn($tips);
         }
         $rules = array(
             //array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
@@ -56,17 +59,26 @@ class RegisterController extends HomebaseController {
             array('password','require','密码不能为空！',1),
         );
         	
+
 	    $users_model=M("Users");
 	     
 	    if($users_model->validate($rules)->create()===false){
-	        $this->error($users_model->getError());
+	        // $this->error($users_model->getError());
+	        $tips['status']=0;//0为失败，1为成功
+            $tips['info']=$users_model->getError();//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 	    }
 	     
 	    $password=$_POST['password'];
 	    $mobile=$_POST['mobile'];
 	     
 	    if(strlen($password) < 5 || strlen($password) > 20){
-	        $this->error("密码长度至少5位，最多20位！");
+	        // $this->error("密码长度至少5位，最多20位！");
+	        $tips['status']=0;//0为失败，1为成功
+            $tips['info']="密码长度至少5位，最多20位！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 	    }
 	     
 	    
@@ -75,14 +87,18 @@ class RegisterController extends HomebaseController {
 	    $users_model=M("Users");
 	    $result = $users_model->where($where)->count();
 	    if($result){
-	        $this->error("手机号已被注册！");
+	        // $this->error("手机号已被注册！");
+	        $tips['status']=0;//0为失败，1为成功
+            $tips['info']="手机号已被注册！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 	    }else{
 
 	        $data=array(
-	            'user_login' => '',
+	            'user_login' => $_POST['mobile'],
 	            'user_email' => '',
 	            'mobile' =>$_POST['mobile'],
-	            'user_nicename' =>'',
+	            'user_nicename' =>$_POST['mobile'],
 	            'user_pass' => sp_password($password),
 	            'last_login_ip' => get_client_ip(0,true),
 	            'create_time' => date("Y-m-d H:i:s"),
@@ -95,10 +111,18 @@ class RegisterController extends HomebaseController {
 	            //登入成功页面跳转
 	            $data['id']=$rst;
 	            $_SESSION['user']=$data;
-	            $this->success("注册成功！",U("user/center/reg_info"));
+	            // $this->success("注册成功！",U("user/center/reg_info"));
+	            $tips['status']=1;//0为失败，1为成功
+	            $tips['info']="注册成功！";//错误信息
+	            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/center/reg_info');//跳转地址,发生错误不需要地址
+	            $this->ajaxReturn($tips);
 	        
 	        }else{
-	            $this->error("注册失败！",U("user/register/index"));
+	            // $this->error("注册失败！",U("user/register/index"));
+	            $tips['status']=0;//0为失败，1为成功
+	            $tips['info']="注册失败！";//错误信息
+	            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+	            $this->ajaxReturn($tips);
 	        }
 	         
 	    }
@@ -258,11 +282,19 @@ class RegisterController extends HomebaseController {
                 $_SESSION['mcode']=$mcode;
             }
             else{
-                $this->error("验证码发送错误",U("user/register/index"));
+                // $this->error("验证码发送错误",U("user/register/index"));
+                $tips['status']=0;//0为失败，1为成功
+	            $tips['info']="验证码发送错误";//错误信息
+	            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+	            $this->ajaxReturn($tips);
             }
         }
         else{
-            $this->error("手机号码格式错误",U("user/register/index"));
+            // $this->error("手机号码格式错误",U("user/register/index"));
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="手机号码格式错误";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
     }
 

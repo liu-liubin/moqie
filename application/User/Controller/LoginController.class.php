@@ -25,6 +25,7 @@ class LoginController extends HomebaseController {
 		if($current_user['user_status']==2){
 		    $this->_send_to_active();
 		    $this->success('激活邮件发送成功，激活请重新登录！',U("user/index/logout"));
+
 		}else if($current_user['user_status']==1){
 		    $this->error('您的账号已经激活，无需再次激活！');
 		}else{
@@ -35,12 +36,72 @@ class LoginController extends HomebaseController {
 	function forgot_password(){
 		$this->display(":forgot_password");
 	}
+	//YHX 20160514 修改密码的操作
+	function myforgot_password(){
+		if($this->check_mcode()==0){
+             // $this->error("手机验证码错误！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="手机验证码错误！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+
+        }
+        $users_model=M("Users");
+        $password=$_POST['password'];
+        $newpassword = sp_password($password);
+        $mobile = $_POST['mobile'];
+        $data['user_pass'] = $newpassword;
+        //判断不允许为空
+        if(empty($password) || empty($mobile)){
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="信息不完整";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+        }
+        $user=$users_model->where(array("mobile"=>$mobile))->save($data);
+        if($user){
+        	// $this->success("修改密码成功！",U("user/login/index"));
+            $tips['status']=1;//0为失败，1为成功
+            $tips['info']="修改密码成功！";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+        }
+        else{
+        	// $this->error("修改密码失败！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="修改密码失败！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+        }
+	}
 	
-	
+	//YHX 校验手机验证码
+    function check_mcode(){
+        //将获取的缓存时间转换成时间戳加上180秒后与当前时间比较，小于当前时间即为过期
+        if((strtotime($_SESSION['time'])+180)<time()) {
+            session_destroy();
+            unset($_SESSION);
+            //header('content-type:text/html; charset=utf-8;');
+            //echo '<script>alert("验证码已过期，请重新获取！");</script>';
+            return 0;
+        }
+        elseif($_SESSION['mcode']!=$_POST['mcode']){
+            //echo '<script>alert("验证码错误，请重新获取！");</script>';
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
+	//旧版忘记密码，暂停使用
 	function doforgot_password(){
 		if(IS_POST){
 			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
+				// $this->error("验证码错误！");
+                $tips['status']=0;//0为失败，1为成功
+                $tips['info']="验证码错误！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
 			}else{
 				$users_model=M("Users");
 				$rules = array(
@@ -105,7 +166,11 @@ hello;
 	    $hash=I("get.hash");
 	    $find_user=$users_model->where(array("user_activation_key"=>$hash))->find();
 	    if (empty($find_user)){
-	        $this->error('重置码无效！',__ROOT__."/");
+	        // $this->error('重置码无效！',__ROOT__."/");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="重置码无效！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 	    }else{
 	        $this->display(":password_reset");
 	    }
@@ -114,7 +179,11 @@ hello;
 	function dopassword_reset(){
 		if(IS_POST){
 			if(!sp_check_verify_code()){
-				$this->error("验证码错误！");
+				// $this->error("验证码错误！");
+                $tips['status']=0;//0为失败，1为成功
+                $tips['info']="验证码错误！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
 			}else{
 				$users_model=M("Users");
 				$rules = array(
@@ -125,15 +194,27 @@ hello;
 						array('hash', 'require', '重复密码激活码不能空！', 1 ),
 				);
 				if($users_model->validate($rules)->create()===false){
-					$this->error($users_model->getError());
+					// $this->error($users_model->getError());
+                    $tips['status']=0;//0为失败，1为成功
+                    $tips['info']=$users_model->getError();//错误信息
+                    // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+                    $this->ajaxReturn($tips);
 				}else{
 					$password=sp_password(I("post.password"));
 					$hash=I("post.hash");
 					$result=$users_model->where(array("user_activation_key"=>$hash))->save(array("user_pass"=>$password,"user_activation_key"=>""));
 					if($result){
-						$this->success("密码重置成功，请登录！",U("user/login/index"));
+						// $this->success("密码重置成功，请登录！",U("user/login/index"));
+                        $tips['status']=1;//0为失败，1为成功
+                        $tips['info']="密码重置成功，请登录！";//错误信息
+                        $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                        $this->ajaxReturn($tips);
 					}else {
-						$this->error("密码重置失败，重置码无效！");
+						// $this->error("密码重置失败，重置码无效！");
+                        $tips['status']=0;//0为失败，1为成功
+                        $tips['info']="密码重置失败，重置码无效！";//错误信息
+                        // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/forgot_password');//跳转地址,发生错误不需要地址
+                        $this->ajaxReturn($tips);
 					}
 					
 				}
@@ -148,9 +229,7 @@ hello;
 //yhx20160510
 //    	if(!sp_check_verify_code()){
 //    		$this->error("验证码错误！");
-//    	}
-
-
+        
     	$users_model=M("Users");
     	$rules = array(
     			//array(验证字段,验证规则,错误提示,验证条件,附加规则,验证时间)
@@ -160,28 +239,30 @@ hello;
     	);
     	if($users_model->validate($rules)->create()===false){
 
-    		$this->error($users_model->getError());
+    		//$this->error($users_model->getError());
+    		$tips['status']=0;//0为失败，1为成功
+    		$tips['info']=$users_model->getError();//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+    		$this->ajaxReturn($tips);
     	}
+        
     	
     	$username=$_POST['username'];
-    	
-    	if(preg_match('/^\d+$/', $username)){//手机号登录
+    	//dump(preg_match('/^\d+$/', trim($username)));die(); 
+    	if(preg_match('/^\d+$/', trim($username))){//手机号登录
     	    $this->_do_mobile_login();
     	}else{
     	    $this->_do_email_login(); // 用户名或者邮箱登录
     	}
-    	
-    	
-    	 
     }
 	
     private function _do_mobile_login(){
-//        echo 12311;die();
+        //echo 12311;die();
         $users_model=M('Users');
-        $where['mobile']=$_POST['username'];
+        $where['mobile']=trim($_POST['username']);
         $password=$_POST['password'];
         $result = $users_model->where($where)->find();
-        
+        //dump($result);die();
         if(!empty($result)){
             if(sp_compare_password($password, $result['user_pass'])){
                 $_SESSION["user"]=$result;
@@ -194,12 +275,24 @@ hello;
                 $redirect=empty($_SESSION['login_http_referer'])?__ROOT__."/":$_SESSION['login_http_referer'];
                 $_SESSION['login_http_referer']="";
         
-                $this->success("登录验证成功！", $redirect);
+                // $this->success("登录验证成功！", $redirect);
+                $tips['status']=1;//0为失败，1为成功
+                $tips['info']="登录验证成功！";//错误信息
+                $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/index/index');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }else{
-                $this->error("密码错误！");
+                // $this->error("密码错误！");
+                $tips['status']=0;//0为失败，1为成功
+                $tips['info']="密码错误！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }
         }else{
-            $this->error("用户名不存在！");
+            // $this->error("用户名不存在！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="用户名不存在！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
     }
     
@@ -316,7 +409,12 @@ hello;
                 $this->error("密码错误！");
             }
         }else{
-            $this->error("用户名不存在！");
+            // $this->error("用户名不存在！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请填写信息";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+
         }
         
         

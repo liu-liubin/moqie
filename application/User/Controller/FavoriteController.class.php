@@ -19,7 +19,7 @@ class FavoriteController extends MemberbaseController{
             ->join(C( 'DB_PREFIX' )."users c ON a.uid = c.id")
             ->limit('0,'.$limit1)
             ->where($map)
-            ->field('post_title as title,post_keywords as content,b.id,post_modified,tag,ds,post_author,price,unit,img1,img2,c.companyname,c.mobile')
+            ->field('post_title as title,post_keywords as content,b.id,post_modified,tag,ds,post_author,price,unit,img1,img2,c.companyname,c.mobile,num')
             ->order("b.post_modified DESC")->select();
 
         //处理数据
@@ -32,7 +32,8 @@ class FavoriteController extends MemberbaseController{
             $dslist[$k]["ds"]= $v["ds"]==1?"供":"需";//供需标签
             $dslist[$k]['url']=U("portal/dslist/dslist_detail",array('id'=>$v["id"]));
             //tag处理
-            $tags = explode(',',$v['tag']);
+            $tags = explode(',',preg_replace("/(\n)|(\s)|(\t)|(\')|(')|(，)/" ,',' ,$v['tag']));
+            //$tags = explode(',',$v['tag']);
             foreach($tags as $k1 => $v1){
                 if($v1){
                     $dslist[$k]["tags"][$k1]["title"] = $v1;
@@ -105,7 +106,7 @@ class FavoriteController extends MemberbaseController{
         $user_favorites_model=M("UserFavorites");
         $find_favorite=$user_favorites_model->where(array('table'=>"dslist",'object_id'=>$dsid,'uid'=>$uid))->find();
         if($find_favorite){
-            $this->error("亲，您已关注过啦！");
+            $this->success("亲，您已关注过啦");
         }else {
             $result=$user_favorites_model->add($data);
             if($result){
