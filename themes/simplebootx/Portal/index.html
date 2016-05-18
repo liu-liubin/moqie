@@ -64,7 +64,7 @@
         </div>
     </div>
 <nav class="menu clearfix">
-    <dl class="menu-item"><a href="{:UU('dslist/dslist?ds=need')}##need">
+    <dl class="menu-item"><a ajax-get data-action="{:UU('dslist/dslist?ds=need')}##need">
         <dd><img src="__PUBLIC__/images/menu_01.png" /></dd>
         <dt>最新需求</dt>
         </a>
@@ -104,8 +104,8 @@
 <section class="body container">
     <div class="flex-between" style="margin: 0 -.6rem;">
     <ul class="body-list ">
-        <li><div class="list-cont-01"><a href="{:UU('dslist/publish')}"><h3 class="cont-tit">发布需求</h3><h3 class="cont-des">我们帮你找材料</h3></a></div> </li>
-        <li><div class="list-cont-03"><a href="{:UU('dslist/publish')}"><h3 class="cont-tit">发布供应</h3><h3 class="cont-des">我们只推好产品</h3></a></div> </li>
+        <li><div class="list-cont-01"><a ajax-get data-action="{:UU('dslist/publish')}"><h3 class="cont-tit">发布需求</h3><h3 class="cont-des">我们帮你找材料</h3></a></div> </li>
+        <li><div class="list-cont-03"><a ajax-get data-action="{:UU('dslist/publish')}"><h3 class="cont-tit">发布供应</h3><h3 class="cont-des">我们只推好产品</h3></a></div> </li>
     </ul>
     <ul class="body-list">
         <li><div class="list-cont-02"><a href="{:UU('posts/news')}"><h3 class="cont-tit">一键学习</h3><h3 class="cont-des">模切技术大搜罗</h3></a></div> </li>
@@ -113,10 +113,10 @@
     </ul>
     </div>
     <h2 >最新商机</h2>
-    <ul class="product-list" ng-controller="newCtrl">
+    <ul class="product-list">
         <li class="clearfix " ng-repeat="x in newList">
             <div class="pro-right pull-right">
-                <button type="button" class="tigo-btn gz" data-url='{:U("user/favorite/do_dsfav")}&id={{x.id}}' data-html="已关注" ng-click="tips($event)" ng-bind="x.attention"></button>
+                <button ajax-get type="button" class="tigo-btn gz" data-action='{:U("user/favorite/do_dsfav")}&id={{x.id}}' data-html="已关注" data-ng-click="submit()" ng-bind="x.attention"></button>
                 <a href="{{x.mobile}}"><button type="button" class="tigo-btn phone"><i class="fa fa-phone "></i> </button></a>
             </div>
             <div class="pro-left ">
@@ -131,7 +131,8 @@
             </div>
             <h5 class="other flex-between"><div ng-if=" x.ds == '供'">{{x.companyname}}</div><div ng-if="x.switch == 1 && x.ds == '需'">{{x.companyname}}</div> <div ng-if="x.switch == 0 && x.ds == '需'">&nbsp;</div> <div>{{x.post_modified}}</div></h5>
         </li>
-		<li><a href="{:U('portal/dslist/dslist')}" style="padding: .6rem; display: block; text-align: center; font-size: .8rem;">查看更多</a></li>
+		<li>
+        <a href="{:U('portal/dslist/dslist')}" style="padding: .6rem; display: block; text-align: center; font-size: .8rem;">查看更多</a></li>
     </ul>
 </section>
 <footer class="footer">
@@ -174,7 +175,7 @@
             transitionEnd: function(index, element) {}
         });
 </script>
-<script type="text/javascript" ng-module="myApp" ng-ctrl="newCtrl" src="__PUBLIC__/angular.tips.js"></script>
+<script type="text/javascript" module="myApp" src="__PUBLIC__/angular.tips.js"></script>
 <script>
     function getVendorPrefix() {
         // 使用body是为了避免在还需要传入元素

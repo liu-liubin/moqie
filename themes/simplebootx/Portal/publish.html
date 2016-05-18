@@ -97,9 +97,10 @@ form .progress {
 <div class="clearfix publish-top" ><h3 class="pull-left text-center {{gy.color}}" ng-click="showSelectTitle='全部';gongyingBtn()" >发供应<i class="fa {{gy.icon}}"></i> </h3><h3 ng-click="showSelectTitle='全部';xuqiuBtn()" class="pull-right text-center {{xq.color}}">发需求<i class="fa {{xq.icon}}"></i></h3></div>
 <section class="publish-wrapper container">
 
-	<!------发布供给--------->
+	<!------发布供给------>
     <form name="myForm" ng-style="formStyle1"  action="portal/dslist/do_publish" method="post" enctype="multipart/form-data">
         <input type="hidden" ng-model="type" name="type" id="type" value="1" />
+        <input type="hidden" name="categoryId" value="123">
         <div class="tigo-input-group publish-input">
             <label>企业名称</label> 
             <input class="input-item" disabled="disabled" style="background:transparent;" type="text" id="cn" name="companyname"  value="{$user.companyname}">
@@ -113,7 +114,7 @@ form .progress {
             <select class="category-select" ng-style="parentStyle"  ng-model="cid" ng-change="selectChange()">
                 <option value=""></option>
                 <option ng-repeat="x in categoryList" ng-bind="x.title" name="termid" ng-value="x.id" ></option>
-            </select--->
+            </select------>
             <label>选择类别</label>  <div class="input-item text-right" > <span class="showSelectTitle">全部</span>&nbsp;<i class="fa fa-angle-right" ></i>&nbsp;&nbsp;</div>
         </div>
         <div class="tigo-input-group publish-input">
@@ -198,7 +199,7 @@ form .progress {
         </div>
     </form>
 
-	<!--------发布供给--------->
+	<!--------发布供给---------->
 
     <form style="display:none" name="myForm2" ng-style="formStyle2" action="portal/dslist/do_publish" method="post" enctype="multipart/form-data">
         <input type="hidden" ng-model="type" name="type" id="type" value="2" />
@@ -211,14 +212,14 @@ form .progress {
         </div>
         <div class="tigo-input-group publish-input" onclick="categorySelect(true)">
 			
-            <!---input type="hidden" name="termid"  value="{{categoryId}}">
+           <!---input type="hidden" name="termid"  value="{{categoryId}}">
             <select class="category-select" ng-style="childStyle"  ng-model="resId" ng-change="childSelect()">
                 <option ng-repeat="a in childOption" name="termid" value="{{a.id}}">{{a.title}}</option>
             </select>
             <select class="category-select" ng-style="parentStyle"  ng-model="cid" ng-change="selectChange()">
                 <option value=""></option>
                 <option ng-repeat="x in categoryList" ng-bind="x.title" name="termid" ng-value="x.id" ></option>
-            </select--->
+            </select---->
             <label>选择类别</label>  <div class="input-item text-right" > <span class="showSelectTitle" >全部</span>&nbsp;<i class="fa fa-angle-right" ></i>&nbsp;&nbsp;</div>
         </div>
         <div class="tigo-input-group publish-input">
@@ -235,7 +236,7 @@ form .progress {
         </div>
 
         <div class="tigo-input-group publish-input">
-<!--             <div id="uploadPicker" style="right:5rem;"><input type="file" name="img1" onchange="avatar_upload(this)"></div>
+<!------           <div id="uploadPicker" style="right:5rem;"><input type="file" name="img1" onchange="avatar_upload(this)"></div>
             <div id="uploadPicker"><input type="file" name="img2" onchange="avatar_upload(this)"></div> -->
             <textarea class="input-item" name="content" ng-model="content" style="border: solid 0.05rem #ddd;background: #eee;height: 6.5rem" placeholder="请在这里描述您的需求!" required="required"></textarea>
         </div>
@@ -363,7 +364,6 @@ form .progress {
 </footer>
 </body>
 <script>
-console.log(document.getElementsByClassName("showSelectTitle"));
 	var categoryLists = angular.fromJson('{$terms|json_encode}');
 	var categoryList = [];   //分类初始化
 	var categoryHTML = '';		//初始化分类列表元素
@@ -388,8 +388,8 @@ console.log(document.getElementsByClassName("showSelectTitle"));
 					}
 					if(data.id == id){
 						//console.log(data);
-						document.getElementsByClassName("showSelectTitle")[0].innerHTML = data.title+'<input type="hidden" name="categoryId" value="'+data.id+'" />';
-						document.getElementsByClassName("showSelectTitle")[1].innerHTML = data.title+'<input type="hidden" name="categoryId" value="'+data.id+'" />';
+						document.getElementsByClassName("showSelectTitle")[0].innerHTML = data.title+'<input type="hidden" name="termid" value="'+data.id+'" />';
+						document.getElementsByClassName("showSelectTitle")[1].innerHTML = data.title+'<input type="hidden" name="termid" value="'+data.id+'" />';
 					}
 			})		
 			if(newCateList.length<1){
@@ -563,12 +563,11 @@ console.log(document.getElementsByClassName("showSelectTitle"));
 
         $scope.test = function(){
             var type = document.getElementById("type");
-            console.log(type.value);
         }
 
         $scope.submitGY = function(file1,file2,$event){
 
-			$scope.category = document.myForm.categoryId.value;
+			$scope.category = document.myForm.categoryId.value || "";
             $event.preventDefault();
 
             if($scope.cid){
@@ -670,7 +669,7 @@ console.log(document.getElementsByClassName("showSelectTitle"));
 
 
         $scope.submitXQ = function(file1,file2){    
-			$scope.category = document.myForm.categoryId.value;
+			$scope.category = document.myForm.categoryId.value || "";
             if($scope.cid){
              //   $scope.category = $scope.cid;
             }else{

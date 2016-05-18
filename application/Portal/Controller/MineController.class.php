@@ -41,7 +41,7 @@ class MineController extends HomebaseController {
             $this->error("请先登录！",U("user/login/index"));
             // $tips['status']=0;//0为失败，1为成功
             // $tips['info']="请先登录！";//错误信息
-            // // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
             // $this->ajaxReturn($tips);
         }
     }

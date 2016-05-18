@@ -23,20 +23,19 @@
 <body data-bg>
 <header class="tigo-head container">
     <div class="top-left">
-        <a href="javascript:history.back();" ><i class="fa fa-angle-left icon-back"></i></a>
+        <a href="javascript:history.go(-2);" ><i class="fa fa-angle-left icon-back"></i></a>
     </div>
     <div class="top-title text-center">
         <?php echo ($dslist["post_title"]); ?>
     </div>
-    <div class="top-right text-right ">
-        <a class="share" share-bg>&nbsp;</a>
-    </div>
+   
 </header>
 <section class="pro-wrapper">
     <figure class="pro-title">
         <img src="<?php echo ($dslist["img1"]); ?>" />
+        <?php if($dslist["img2"] =='/data/upload/nopic.gif'): else: ?><img src="<?php echo ($dslist["img2"]); ?>" /><?php endif; ?>
         <figcaption class="cap1 container"><?php echo ($dslist["post_title"]); ?></figcaption>
-        <figcaption class="cap2 container" text-yellow><?php echo ($dslist["price"]); ?>元/<?php echo ($dslist["unit"]); ?><a class="tigo-btn gz pull-right" href='<?php echo U("user/favorite/do_dsfav");?>&id=<?php echo ($dslist["id"]); ?>'>+关注</a> </figcaption>
+        <figcaption class="cap2 container" text-yellow style="font-size:.8rem;position:relative;"><?php if( $dslist["price"] == '面议' ): echo ($dslist["price"]); else: echo ($dslist["price"]); ?>元/<?php echo ($dslist["unit"]); endif; ?><a class="tigo-btn gz pull-right" href='<?php echo U("user/favorite/do_dsfav");?>&id=<?php echo ($dslist["id"]); ?>' style="position:absolute;bottom:0;font-size:.7rem;right:0.6rem;"><?php echo ($dslist["isfav"]); ?></a> </figcaption>
     </figure>
     <div class="pro-param container">
         <h3 class="title">产品参数</h3>
@@ -44,7 +43,7 @@
     </div>
     <div class="pro-describe container">
         <h3 class="title">产品描述</h3>
-        <?php echo ($dslist["content"]); ?>
+        <?php echo ($dslist["post_content"]); ?>
     </div>
 </section>
 <footer class="pro-footer">

@@ -69,7 +69,7 @@
         <div class="wm-input" >
             <div class="title">
                 <h2 class="item-title">公司名称</h2>
-                <h3 class="item-after"><input type="text" name="companyname" style="background:transparent;border:none;" value="{$user.company_name|default=''}" placeholder="请填写公司名称" /></h3>
+                <h3 class="item-after"><input type="text" form="form22" name="companyname" style="background:transparent;border:none;" value="{$user.companyname|default=''}" placeholder="请填写公司名称" /></h3>
                 <img ng-click="editTx()" class="pic" src="{$user.logo}" style="width: 3rem;height: 3rem;" />
             </div>
         </div>
@@ -91,7 +91,7 @@
             </div>
             </form>
         </div>
-    <form action='{:U("user/center/do_reg_company")}' method="post">
+    <form ajax-form id="form22" name="form22" onsubmit="return false" action='{:U("user/center/do_reg_company")}' method="post">
         <div  class="wm-input">
             <label>公司地址</label>
             <div class="input">
@@ -128,7 +128,6 @@
         </div>
     </form>
 </div>
-
 <script>
     var app = angular.module("myApp",['ngFileUpload','ngImgCrop']);
     app.controller("myCtrl",function($scope, Upload, $timeout, $http){
@@ -164,5 +163,6 @@
     })
 
 </script>
+<script type="text/javascript" module="myApp" src="__PUBLIC__/angular.tips.js"></script>
 </body>
 </html>

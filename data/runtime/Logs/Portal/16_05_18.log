@@ -1,0 +1,9 @@
+[ 2016-05-18T17:42:19+08:00 ] 127.0.0.1 /index.php?g=portal&m=center&a=reg_company
+ERR: 无法加载控制器:Center
+
+[ 2016-05-18T17:55:04+08:00 ] 127.0.0.1 /index.php?g=&m=center&a=reg_companty
+ERR: 无法加载控制器:Center
+
+[ 2016-05-18T17:55:08+08:00 ] 127.0.0.1 /index.php?g=&m=center&a=reg_company
+ERR: 无法加载控制器:Center
+

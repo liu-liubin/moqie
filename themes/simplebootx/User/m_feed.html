@@ -8,7 +8,7 @@
     <title>模切之家</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="renderer" content="webkit" />
-
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
     <link rel="stylesheet" href="__PUBLIC__/css/wm-ui.css">
     <style>
         body{font-family: "Microsoft YaHei"}
@@ -59,6 +59,7 @@
                     line-height: .8rem;
     white-space: nowrap;
     display: inline-block;
+    margin-bottom: 0.15rem;
         }
 		.mfeed-cont .tit .type{
 		    position: absolute;
@@ -103,15 +104,14 @@
 		}
     </style>
 </head>
-<body>
+<body ng-app="myApp">
 <header class="wm-head">
     <a href="javascript:history.back();" class="back"></a>
-	<a href="{:U('portal/dslist/publish')}"><button class="publish">+发布</button></a>
+	<a ajax-get data-action="{:U('portal/dslist/publish')}"><button class="publish">+发布</button></a>
     <h1>我的供给</h1>
 </header>
 <div class="content">
-
-    <foreach name="dslist" item="vo">
+    <foreach name="dslist" item="vo" >
         <div class="content-padded grid-demo mfeed-list">
             <div class="clearfix">
 				<a href="{:U('portal/dslist/dslist_detail')}&id={$vo.id}">            
@@ -156,4 +156,5 @@
     </ul>
 </section>-->
 </body>
+<script type="text/javascript" module="myApp"  src="__PUBLIC__/angular.tips.js"></script>
 </html>

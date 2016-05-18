@@ -17,7 +17,7 @@
     <![endif]-->
     <script src="/public/js/ng-file-upload-shim.js"></script>
     <script src="/public/js/ng-file-upload.js"></script>
-    <script src="/public/js/layer/layer.js"></script>
+	<script src="/public/js/layer/layer.js"></script>
     <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/public/css/tigo-ui.css" type="text/css" />
     <link rel="stylesheet" href="/public/css/style.css" type="text/css" />
@@ -97,15 +97,16 @@ form .progress {
 <div class="clearfix publish-top" ><h3 class="pull-left text-center {{gy.color}}" ng-click="showSelectTitle='全部';gongyingBtn()" >发供应<i class="fa {{gy.icon}}"></i> </h3><h3 ng-click="showSelectTitle='全部';xuqiuBtn()" class="pull-right text-center {{xq.color}}">发需求<i class="fa {{xq.icon}}"></i></h3></div>
 <section class="publish-wrapper container">
 
-    <!------发布供给--------->
+	<!------发布供给------>
     <form name="myForm" ng-style="formStyle1"  action="portal/dslist/do_publish" method="post" enctype="multipart/form-data">
         <input type="hidden" ng-model="type" name="type" id="type" value="1" />
+        <input type="hidden" name="categoryId" value="123">
         <div class="tigo-input-group publish-input">
             <label>企业名称</label> 
             <input class="input-item" disabled="disabled" style="background:transparent;" type="text" id="cn" name="companyname"  value="<?php echo ($user["companyname"]); ?>">
         </div>
         <div class="tigo-input-group publish-input" onclick="categorySelect(true)">
-            
+			
             <!---input type="hidden" name="termid"  value="{{categoryId}}">
             <select class="category-select" ng-style="childStyle"  ng-model="resId" ng-change="childSelect()">
                 <option ng-repeat="a in childOption" name="termid" value="{{a.id}}">{{a.title}}</option>
@@ -113,14 +114,14 @@ form .progress {
             <select class="category-select" ng-style="parentStyle"  ng-model="cid" ng-change="selectChange()">
                 <option value=""></option>
                 <option ng-repeat="x in categoryList" ng-bind="x.title" name="termid" ng-value="x.id" ></option>
-            </select--->
+            </select------>
             <label>选择类别</label>  <div class="input-item text-right" > <span class="showSelectTitle">全部</span>&nbsp;<i class="fa fa-angle-right" ></i>&nbsp;&nbsp;</div>
         </div>
         <div class="tigo-input-group publish-input">
             <label>标题</label> <input class="input-item" name="title" ng-model="title" type="text" placeholder="请输入标题" required="required">
         </div>
         <div class="tigo-input-group publish-input">
-            <label>价格</label> <input class="input-item" name="price" type="text" ng-model="price" placeholder="请输入价格" required="required">
+            <label>价格</label> <input class="input-item" name="price" type="text" ng-model="price" placeholder="请输入价格,默认单位元" required="required">
         </div>
         <div class="tigo-input-group publish-input">
             <label>单位</label> <input class="input-item" name="unit" type="text" ng-model="unit" placeholder="请输入单位" required="required">
@@ -135,7 +136,7 @@ form .progress {
             <div id="uploadPicker">
                 <input type="file" name="img2">
             </div> -->
-            <textarea class="input-item" name="content" ng-model="content" style="border: solid 0.05rem #ddd;background: #eee;height: 4rem" placeholder="请在这里描述您的需求!" required="required"></textarea>
+            <textarea class="input-item" name="content" ng-model="content" style="border: solid 0.05rem #ddd;background: #eee;height: 4rem" placeholder="请在这里添加您的描述!" required="required"></textarea>
         </div>
         <div class="tigo-input-group publish-input">
             <textarea class="input-item" name="specification" ng-model="specification" style="border: solid 0.05rem #ddd;background: #eee;height: 4rem" placeholder="请在这里描述您的产品参数!" required="required"></textarea>
@@ -198,7 +199,7 @@ form .progress {
         </div>
     </form>
 
-    <!--------发布供给--------->
+	<!--------发布供给---------->
 
     <form style="display:none" name="myForm2" ng-style="formStyle2" action="portal/dslist/do_publish" method="post" enctype="multipart/form-data">
         <input type="hidden" ng-model="type" name="type" id="type" value="2" />
@@ -210,15 +211,15 @@ form .progress {
             </div>
         </div>
         <div class="tigo-input-group publish-input" onclick="categorySelect(true)">
-            
-            <!---input type="hidden" name="termid"  value="{{categoryId}}">
+			
+           <!---input type="hidden" name="termid"  value="{{categoryId}}">
             <select class="category-select" ng-style="childStyle"  ng-model="resId" ng-change="childSelect()">
                 <option ng-repeat="a in childOption" name="termid" value="{{a.id}}">{{a.title}}</option>
             </select>
             <select class="category-select" ng-style="parentStyle"  ng-model="cid" ng-change="selectChange()">
                 <option value=""></option>
                 <option ng-repeat="x in categoryList" ng-bind="x.title" name="termid" ng-value="x.id" ></option>
-            </select--->
+            </select---->
             <label>选择类别</label>  <div class="input-item text-right" > <span class="showSelectTitle" >全部</span>&nbsp;<i class="fa fa-angle-right" ></i>&nbsp;&nbsp;</div>
         </div>
         <div class="tigo-input-group publish-input">
@@ -235,7 +236,7 @@ form .progress {
         </div>
 
         <div class="tigo-input-group publish-input">
-<!--             <div id="uploadPicker" style="right:5rem;"><input type="file" name="img1" onchange="avatar_upload(this)"></div>
+<!------           <div id="uploadPicker" style="right:5rem;"><input type="file" name="img1" onchange="avatar_upload(this)"></div>
             <div id="uploadPicker"><input type="file" name="img2" onchange="avatar_upload(this)"></div> -->
             <textarea class="input-item" name="content" ng-model="content" style="border: solid 0.05rem #ddd;background: #eee;height: 6.5rem" placeholder="请在这里描述您的需求!" required="required"></textarea>
         </div>
@@ -344,7 +345,7 @@ form .progress {
     <dl class="nav-list active">
         <a href="<?php echo UU('dslist/dslist');?>" >
             <dd data-nav-market><!--<img src="images/nav_02.png" /> --></dd>
-            <dt>商场</dt>
+            <dt>商城</dt>
         </a>
     </dl>
     <dl class="nav-list">
@@ -363,74 +364,75 @@ form .progress {
 </footer>
 </body>
 <script>
-console.log(document.getElementsByClassName("showSelectTitle"));
-    var categoryLists = angular.fromJson('<?php echo (json_encode($terms)); ?>');
-    var categoryList = [];   //分类初始化
-    var categoryHTML = '';      //初始化分类列表元素
+	var categoryLists = angular.fromJson('<?php echo (json_encode($terms)); ?>');
+	var categoryList = [];   //分类初始化
+	var categoryHTML = '';		//初始化分类列表元素
     angular.forEach(categoryLists,function(data){
             if(data.parent_id==0){
                 categoryList.push(data);
             }
     })
-    
-    /*****选择分类****/
-    function categorySelect(id){
-        document.getElementsByClassName("showSelectTitle")[0].innerHTML = '全部';
-        document.getElementsByClassName("showSelectTitle")[1].innerHTML = '全部';
-        if(id && id!=0 && id!==true){
-            //categoryList = [];
-            categoryHTML = '';
-            var prevText = '' //返回上一级
-            var newCateList = [];
-            angular.forEach(categoryLists,function(data){
-                    if(data.parent_id==id){
-                        newCateList.push(data);
-                    }
-                    if(data.id == id){
-                        //console.log(data);
-                        document.getElementsByClassName("showSelectTitle")[0].innerHTML = data.title+'<input type="hidden" name="categoryId" value="'+data.id+'" />';
-                        document.getElementsByClassName("showSelectTitle")[1].innerHTML = data.title+'<input type="hidden" name="categoryId" value="'+data.id+'" />';
-                    }
-            })      
-            if(newCateList.length<1){
-                return false;
-            }
-            oldCategoryList = categoryList;  //作用于返回上一级
-            categoryList = newCateList;
-            //oldCategoryList = categoryList;
-            prevText='<li style="padding:.2rem 0" onclick="categorySelect(0)">返回上一级<li>';
-            layer.closeAll();
-        }
+	
+	/*****选择分类****/
+	function categorySelect(id){
+		document.getElementsByClassName("showSelectTitle")[0].innerHTML = '全部';
+		document.getElementsByClassName("showSelectTitle")[1].innerHTML = '全部';
+		if(id && id!=0 && id!==true){
+			//categoryList = [];
+			categoryHTML = '';
+			var prevText = '' //返回上一级
+			var newCateList = [];
+			angular.forEach(categoryLists,function(data){
+					if(data.parent_id==id){
+						newCateList.push(data);
+					}
+					if(data.id == id){
+						//console.log(data);
+						document.getElementsByClassName("showSelectTitle")[0].innerHTML = data.title+'<input type="hidden" name="termid" value="'+data.id+'" />';
+						document.getElementsByClassName("showSelectTitle")[1].innerHTML = data.title+'<input type="hidden" name="termid" value="'+data.id+'" />';
+					}
+			})		
+			if(newCateList.length<1){
+				return false;
+			}
+			oldCategoryList = categoryList;  //作用于返回上一级
+			categoryList = newCateList;
+			//oldCategoryList = categoryList;
+			prevText='<li style="padding:.2rem 0" onclick="categorySelect(0)">返回上一级<li>';
+			layer.closeAll();
+		}
 
-        //如果ID为0就表示返回上一级菜单 
-        if(id == 0){
-            categoryHTML = '';
-            categoryList = oldCategoryList;
-            layer.closeAll();
-        }
-        if(id===true){
-            categoryList = [];
-            angular.forEach(categoryLists,function(data){
-                    if(data.parent_id==0){
-                        categoryList.push(data);
-                    }
-            })
-        }
-        categoryHTML += '<ul style="font-size:.68rem;padding:.5rem .6rem;overflow-y:auto;">'+(prevText?prevText:'');
-                angular.forEach(categoryList,function(v,k){
-                    categoryHTML += '<li style="padding:.2rem 0" onclick="categorySelect('+v.id+')">'+v.title+'<li>';
-                })
-        categoryHTML += '</ul>'     
-        var pageii = layer.open({
-                    shadeClose:true,
-                    type: 1,
-                    content: categoryHTML,
-                    style: 'position:fixed; left:0; bottom:0; width:100%; height:50%; border:none;overflow:auto;z-index:999999;',
-                    end:function(){
-                        
-                    }
-        });
-    }
+		//如果ID为0就表示返回上一级菜单 
+		if(id == 0){
+			categoryHTML = '';
+			categoryList = oldCategoryList;
+			layer.closeAll();
+		}
+		if(id===true){
+			categoryList = [];
+			angular.forEach(categoryLists,function(data){
+					if(data.parent_id==0){
+						categoryList.push(data);
+					}
+			})
+		}
+		categoryHTML += '<ul id="ulTabmenu" style="font-size:.68rem;padding:.5rem .6rem;overflow-y:auto;">'+(prevText?prevText:'');
+				angular.forEach(categoryList,function(v,k){
+					categoryHTML += '<li style="padding:.2rem 0" onclick="categorySelect('+v.id+')">'+v.title+'<li>';
+				})
+		categoryHTML += '</ul>'		
+		var pageii = layer.open({
+					shadeClose:true,
+					type: 1,
+					content: categoryHTML,
+					style: 'position:fixed; left:0; bottom:0; width:100%; height:50%; border:none;overflow:auto;z-index:999999;',
+					end:function(){
+						
+					},success:function(obj){
+						document.getElementById("ulTabmenu")
+					}
+		});
+	}
 
 
     var app = angular.module("myApp",['ngFileUpload']);
@@ -451,7 +453,7 @@ console.log(document.getElementsByClassName("showSelectTitle"));
             color:""
         }
         $scope.gongyingBtn = function(){
-            $scope.showSelectTitle='全部';
+			$scope.showSelectTitle='全部';
             $scope.xq = {
               
                 icon:"fa-angle-down",
@@ -462,11 +464,11 @@ console.log(document.getElementsByClassName("showSelectTitle"));
                 color:"text-red"
             };
             type.value = 1;
-            $scope.formStyle1 = {"display":"block"};
-            $scope.formStyle2 = {"display":"none"};
+			$scope.formStyle1 = {"display":"block"};
+			$scope.formStyle2 = {"display":"none"};
         }
         $scope.xuqiuBtn = function(){
-            $scope.showSelectTitle='全部';
+			$scope.showSelectTitle='全部';
             $scope.gy = {
                 hide:true,
                 icon:"fa-angle-down",
@@ -478,8 +480,8 @@ console.log(document.getElementsByClassName("showSelectTitle"));
                 color:"text-red"
             };
             type.value = 2;
-            $scope.formStyle1 = {"display":"none"};
-            $scope.formStyle2 = {"display":"block"};
+			$scope.formStyle1 = {"display":"none"};
+			$scope.formStyle2 = {"display":"block"};
         }
         $scope.turnCircle = false;
         $scope.circle = function(a,c){
@@ -561,16 +563,17 @@ console.log(document.getElementsByClassName("showSelectTitle"));
 
         $scope.test = function(){
             var type = document.getElementById("type");
-            console.log(type.value);
         }
 
         $scope.submitGY = function(file1,file2,$event){
+
+			$scope.category = document.myForm.categoryId.value || "";
             $event.preventDefault();
 
             if($scope.cid){
-                $scope.category = $scope.cid;
+              //  $scope.category = $scope.cid;
             }else{
-                $scope.category = $scope.resId;
+               // $scope.category = $scope.resId;
             }
 
             var type = document.getElementById("type");
@@ -604,8 +607,8 @@ console.log(document.getElementsByClassName("showSelectTitle"));
             // })
 
             
-
-            if($scope.category && $scope.title && $scope.price && $scope.tag && $scope.content && $scope.specification){
+				//&& $scope.specification
+            if($scope.category && $scope.title && $scope.price && $scope.tag && $scope.content && $scope.specification ){
 
                 Upload.upload({
                     url: '<?php echo U("portal/dslist/do_publish");?>',
@@ -665,11 +668,12 @@ console.log(document.getElementsByClassName("showSelectTitle"));
         }
 
 
-        $scope.submitXQ = function(file1,file2){          
+        $scope.submitXQ = function(file1,file2){    
+			$scope.category = document.myForm.categoryId.value || "";
             if($scope.cid){
-                $scope.category = $scope.cid;
+             //   $scope.category = $scope.cid;
             }else{
-                $scope.category = $scope.resId;
+               // $scope.category = $scope.resId;
             }
 
             var type = document.getElementById("type");
@@ -704,7 +708,7 @@ console.log(document.getElementsByClassName("showSelectTitle"));
                         // file1.result = response.data;
                         // file2.result = response.data;
                         $scope.rsOk = true;
-                        $scope.rs = "供应发布成功!";
+                        $scope.rs = "需求发布成功!";
                         $scope.cid = null;
                         $scope.category = null;
                         $scope.title = '';
@@ -719,7 +723,7 @@ console.log(document.getElementsByClassName("showSelectTitle"));
                     if (response.status > 0)
                     $scope.errorMsg = response.status + ': ' + response.data;
                     $scope.rsOk = false;
-                    $scope.rs = "供应发布失败!";
+                    $scope.rs = "需求发布失败!";
                 });
 
             }else{

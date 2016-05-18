@@ -10,7 +10,6 @@
     <title>模切之家</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="renderer" content="webkit" />
-    <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.min.js"></script>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
@@ -20,10 +19,10 @@
     <link rel="stylesheet" href="__PUBLIC__/css/tigo-ui.css" type="text/css" />
     <link rel="stylesheet" href="__PUBLIC__/css/style.css" type="text/css" />
 </head>
-<body data-bg>
+<body data-bg ng-app="myApp">
 <header class="tigo-head container">
     <div class="top-left">
-        <a href="javascript:history.go(-2);" ><i class="fa fa-angle-left icon-back"></i></a>
+        <a href="javascript:history.go(-1);" ><i class="fa fa-angle-left icon-back"></i></a>
     </div>
     <div class="top-title text-center">
         {$dslist.post_title}
@@ -35,7 +34,7 @@
         <img src="{$dslist.img1}" />
         <if condition="$dslist.img2 =='/data/upload/nopic.gif'"><else/><img src="{$dslist.img2}" /></if>
         <figcaption class="cap1 container">{$dslist.post_title}</figcaption>
-        <figcaption class="cap2 container" text-yellow style="font-size:.8rem;position:relative;"><if condition=" $dslist.price eq '面议' ">{$dslist.price}<else/>{$dslist.price}元/{$dslist.unit}</if><a class="tigo-btn gz pull-right" href='{:U("user/favorite/do_dsfav")}&id={$dslist.id}' style="position:absolute;bottom:0;font-size:.7rem;right:0.6rem;">{$dslist.isfav}</a> </figcaption>
+        <figcaption class="cap2 container" text-yellow style="font-size:.8rem;position:relative;"><if condition=" $dslist.price eq '面议' ">{$dslist.price}<else/>{$dslist.price}元/{$dslist.unit}</if><a class="tigo-btn gz pull-right" ajax-get data-html="已关注" data-action='{:U("user/favorite/do_dsfav")}&id={$dslist.id}' style="position:absolute;bottom:0;font-size:.7rem;right:0.6rem;">{$dslist.isfav}</a> </figcaption>
     </figure>
     <div class="pro-param container">
         <h3 class="title">产品参数</h3>
@@ -48,7 +47,8 @@
 </section>
 <footer class="pro-footer">
     <a href="tel:{$dslist.mobile}"><button class="tigo-btn" type="button"><i class="fa fa-phone"></i> </button></a>
-    <a href="{:U("portal/dslist/sample")}&id={$dslist.id}"><button class="tigo-btn" type="button"> +拿样</button></a>
+    <a ajax-get data-action="{:U("portal/dslist/sample")}&id={$dslist.id}"><button class="tigo-btn" type="button"> +拿样</button></a>
 </footer>
 </body>
+<script type="text/javascript" module="myApp" src="__PUBLIC__/angular.tips.js"></script>
 </html>

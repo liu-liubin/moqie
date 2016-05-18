@@ -30,7 +30,7 @@
 </div>
 <section class="reg-wrapper" >
     <div id="showHTML"></div>
-    <form action="{:U('user/login/dologin')}" name="form1" id="form1" method="post" ng-controller="formCtrl">
+    <form ajax-form action="{:U('user/login/dologin')}" onsubmit="return false" name="form1" id="form1" method="post" >
         <div class="wm-input">
             <input type="text" name="username" placeholder="请输入您的手机号码" />
         </div>
@@ -38,13 +38,13 @@
             <input type="password" name="password" placeholder="请输入密码" />
         </div>
         <div class="text-right" style="font-size:.8rem;padding: .6rem;">
-            <a data-url="{:U('user/login/forgot_password')}" ng-click="tips($event)" data-html="找回密码" >忘记密码?</a>
+            <a href="{:U('user/login/forgot_password')}"  >忘记密码?</a>
         </div>
         <div style="margin-top:1rem;padding:0 .6rem;">
-        <button type="button" class="wm-btn btn-danger" ng-click="submit('form1')">登陆</button>
+        <button type="submit" class="wm-btn btn-danger">登陆</button>
         </div>
     </form>
 </section>
 </body>
-<script type="text/javascript" ng-module="apps" ng-ctrl="formCtrl" src="__PUBLIC__/angular.tips.js"></script>
+<script type="text/javascript" module="apps" src="__PUBLIC__/angular.tips.js"></script>
 </html>

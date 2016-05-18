@@ -7,12 +7,11 @@
     <title>模切之家</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="renderer" content="webkit" />
-    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="__PUBLIC__/js/layer/layer.js" ></script>
     <link rel="stylesheet" href="__PUBLIC__/css/wm-ui.css" type="text/css" />
     <style>
         .pro-wrapper .wm-input{font-size: .8rem;border-bottom: solid 1px #ddd;padding: 0 .6rem;}
@@ -26,7 +25,7 @@
     </h1>
 </header>
 <section class="pro-wrapper ">
-   <form id="form1" method="post" action='{:U("portal/dslist/do_sample")}' ng-controller="formCtrl">
+   <form ajax-form onsubmit="return false" id="form1" method="post" action='{:U("portal/dslist/do_sample")}' >
       <input type="hidden" name="object_id" value="{$object_id}"></input>
        <div class="wm-input">
             <label for="p1">拿货人</label> <input id="p1" class="input-item" type="text" name="picker" value="{$user.truename}"></div>
@@ -47,10 +46,12 @@
            <label for="p6">收货地址</label> <input id="p6" class="input-item" type="text" name="address" value="{$user.address}" >
        </div>
        <h5 style="height: 3rem"></h5>
-       <button type="button" ng-click="submit('form1')" class="wm-btn btn-danger">确定</button>
+      <div style="padding:0 .6rem">
+        <button type="submit"  class="wm-btn btn-danger">确定</button>
+      </div>
 
    </form>
 </section>
-<script type="text/javascript" ng-module="myApp" ng-ctrl="formCtrl" src="__PUBLIC__/angular.tips.js"></script>
+<script type="text/javascript" module="myApp" src="__PUBLIC__/angular.tips.js"></script>
 </body>
 </html>

@@ -72,11 +72,11 @@
     <h1>我的关注</h1>
 </header>
 <div class="content">
-    <ul class="pro-list" ng-controller="attentionCtrl">
+    <ul class="pro-list" >
     <foreach name="dslist" item="vo">
         <li class="clearfix ">
                 <div class="pro-right pull-right">
-                    <button data-url="user/favorite/delete_favorite?id={$vo.id}" ng-click="tips($event)" type="button" class="btn-gz">取消关注</button>
+                    <button ajax-get data-action="user/favorite/delete_favorite?id={$vo.id}" type="button" class="btn-gz">取消关注</button>
                     <a href="tel:{$vo.mobile}"><button type="button" class="btn-gz" style="margin-top: .3rem;"><i class="fa fa-phone "></i> </button></a>
                 </div>
                 <div class="pro-left ">
@@ -143,6 +143,6 @@
         </a>
     </dl>
 </footer>
-<script type="text/javascript" ng-module="myApp" ng-ctrl="attentionCtrl" src="__PUBLIC__/angular.tips.js"></script>
+<script type="text/javascript" module="myApp"  src="__PUBLIC__/angular.tips.js"></script>
 </body>
 </html>

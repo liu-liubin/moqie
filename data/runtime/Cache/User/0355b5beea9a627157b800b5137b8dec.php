@@ -1,5 +1,5 @@
 <?php if (!defined('THINK_PATH')) exit();?><!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
@@ -10,7 +10,12 @@
     <title>模切之家</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="renderer" content="webkit" />
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
+    <script src="/public/js/ng-file-upload-shim.js"></script>
+    <script src="/public/js/ng-file-upload.js"></script>
+    <script src="/public/js/ng-img-crop.js"></script>
     <link rel="stylesheet" href="/public/css/wm-ui.css">
+    <link rel="stylesheet" href="/public/css/ng-img-crop.css" type="text/css" />
     <style>
         /*body{font-family: "Microsoft YaHei";background: #fff;}
         .text-right{text-align: right ;}.text-left{text-align: left}
@@ -26,47 +31,92 @@
         .item-title{margin: .6rem 0;font-size: 1rem;}
         .item-after{margin-bottom: .6rem;font-size: .8rem;}
         .title img.pic{position: absolute;top:50%;right: .6rem;transform:translateY(-50%);}
+        .cropArea {
+            box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box; 
+            background: #E4E4E4;
+            overflow: hidden;
+            width:100%;
+            height:12rem;
+        }
+        form .progress {
+            line-height: 15px;
+        }
+        .progress {
+            display: inline-block;
+            width: 100px;
+            border: 3px groove #CCC;
+        }
+        .progress div {
+            font-size: smaller;
+            background: orange;
+            width: 0;
+        }
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
     </style>
 </head>
-<body>
+<body ng-controller="myCtrl">
 <header class="wm-head">
-    <a class="back" onclick="javascript:history.back();">  </a>
+    <a class="back" href="<?php echo U('portal/index/index');?>">  </a>
     <h1 >完善企业资料</h1>
 </header>
 <div class="content">
-    <form name="cForm" onsubmit="return submitForm();" action='<?php echo U("user/center/do_reg_company");?>' method="post">
+    
         <div class="wm-input" >
             <div class="title">
                 <h2 class="item-title">公司名称</h2>
-                <h3 class="item-after"><input type="text" name="company_name" value="<?php echo ($user["company_name"]); ?>" style="border: none;" placeholder="填写公司名称" /></h3>
-                <img class="pic" src="/public/images/circle.png" style="width: 3rem;height: 3rem;" />
+                <h3 class="item-after"><input type="text" form="form22" name="companyname" style="background:transparent;border:none;" value="<?php echo ((isset($user["companyname"]) && ($user["companyname"] !== ""))?($user["companyname"]):''); ?>" placeholder="请填写公司名称" /></h3>
+                <img ng-click="editTx()" class="pic" src="<?php echo ($user["logo"]); ?>" style="width: 3rem;height: 3rem;" />
             </div>
         </div>
+        <div style="padding:0.5rem;height:16rem;" ng-show="showEditTx">
+            <form name="myForm" method="post" enctype="multipart/form-data">
+            <div style="display:flex;flex-direction:column;width:100%;">
+                <div ngf-drop ng-model="picFile" ngf-pattern="image/*" class="cropArea">
+                    <img-crop image="picFile  | ngfDataUrl" result-image="croppedDataUrl" ng-init="croppedDataUrl=''">
+                    </img-crop>
+                </div>
+
+                <div style="margin-bottom: 0.5rem;margin-top: 0.5rem;">
+                    <button style="background:none;padding:6px 12px;border:1px solid #ccc;font-size: 0.7rem;font-family: '微软雅黑';" ngf-select ng-model="picFile" accept="image/*">选择头像</button>
+                    <button style="background:none;padding:6px 12px;border:1px solid #ccc;font-size: 0.7rem;font-family: '微软雅黑';" ng-click="upload(croppedDataUrl, picFile)">上传头像</button> 
+                    <span ng-show="result">上传成功</span>
+                    <span class="err" ng-show="errorMsg">{{errorMsg}}</span>
+                </div>
+
+            </div>
+            </form>
+        </div>
+    <form ajax-form id="form22" name="form22" onsubmit="return false" action='<?php echo U("user/center/do_reg_company");?>' method="post">
         <div  class="wm-input">
             <label>公司地址</label>
             <div class="input">
-                <input type="text" class="text-right" name="company_add" value="<?php echo ($user["company_add"]); ?>" placeholder="填写公司地址" />
+                <input type="text" class="text-right" placeholder="请填写公司地址" name="company_add" value="<?php echo ($user["company_add"]); ?>" />
                 <img src="/public/images/prev2.png" style="width: .6rem" />
             </div>
         </div>
         <div class="wm-input">
             <label>主营业务</label>
             <div class="input">
-                <input type="text" class="text-right" name="primarybusiness" placeholder="填写公司主营业务" value="<?php echo ($user["primarybusiness"]); ?>"/>
+                <input type="text" class="text-right" placeholder="请填写主营业务" name="primarybusiness" value="<?php echo ($user["primarybusiness"]); ?>"/>
                 <img src="/public/images/prev2.png" style="width: .6rem" />
             </div>
         </div>
         <div class="wm-input">
             <label>客户群体</label>
             <div class="input">
-                <input type="text" class="text-right" name="customer_groups" placeholder="填写客户群体" value="<?php echo ($user["customer_groups"]); ?>"/>
+                <input type="text" class="text-right" placeholder="请填写客户群体" name="customer_groups" value="<?php echo ($user["customer_groups"]); ?>"/>
                 <img src="/public/images/prev2.png" style="width: .6rem" />
             </div>
         </div>
         <div class="wm-input">
             <label>邮箱</label>
             <div class="input">
-                <input type="text" class="text-right" name="customer_email" placeholder="填写邮箱" value="<?php echo ($user["customer_email"]); ?>"/>
+                <input type="text" class="text-right" placeholder="请填写邮箱" name="customer_email" value="<?php echo ($user["customer_email"]); ?>"/>
                 <img src="/public/images/prev2.png" style="width: .6rem" />
             </div>
         </div>
@@ -78,44 +128,41 @@
         </div>
     </form>
 </div>
-</body>
-<script type="text/javascript" src="/public/js/layer/layer.js"></script>
-<script type="text/javascript">
-    /*(function(){
-        var q;
-        window.addEventListener("focus", function(e){
-            var p;
+<script>
+    var app = angular.module("myApp",['ngFileUpload','ngImgCrop']);
+    app.controller("myCtrl",function($scope, Upload, $timeout, $http){
 
-            e = e || window.event;
-            p = e.target;
-            //console.log(p.nodeName);
-            if (p.nodeName === "INPUT" || p.nodeName === "TEXTAREA") {
-                document.getElementById("submitBtn").style.display="block"
-            }
+         $scope.showEditTx = false;
+         $scope.editTx = function(){
+            $scope.showEditTx = !$scope.showEditTx;
+         }
 
-        }, true)
-    }())*/
-    function submitForm(){
-        var filter  = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        mail = document.cForm.customer_email.value;
-        jianjie = document.cForm.company_jianjie.value;
-        if(!filter.test(mail)){
-            layer.open({
-                content: "邮箱输入有误！",
-                style: 'background-color:#EEE; color:#666; border:none;',
-                time: 2
+        $scope.upload = function (dataUrl, picFile) {
+            Upload.upload({
+                url: '<?php echo U("user/center/reg_company");?>',
+                data: {
+                    test:'testword',
+                    status:true,
+                    pic: picFile,
+                    file: Upload.dataUrltoBlob(dataUrl, picFile.name)
+                },
+            }).then(function (response) {
+                $timeout(function () {
+                    $scope.result = response.data;
+                });
+                window.location.reload();
+                // console.log('ok');
+                // console.log(response);
+            }, function (response) {
+                if (response.status > 0) $scope.errorMsg = response.status 
+                    + ': ' + response.data;
+            }, function (evt) {
+                $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
             });
-            return false;
-        }else if(!jianjie){
-            layer.open({
-                content: "请填写您的企业简介",
-                style: 'background-color:#EEE; color:#666; border:none;',
-                time: 2
-            });
-            return false;
-        }else{
-            return true;
         }
-    }
+    })
+
 </script>
+<script type="text/javascript" module="myApp" src="/public/angular.tips.js"></script>
+</body>
 </html>

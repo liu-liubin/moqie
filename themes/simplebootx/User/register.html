@@ -23,14 +23,14 @@
             padding: 0 .5rem;
             border-radius: .2rem;
         }
-        .reg-form .wm-input{
+        form .wm-input{
             border-bottom:solid 1px #eee;padding: .6rem 0;
         }
     </style>
 </head>
-<body ng-app="ngReg" ng-controller="ngRegCtrl">
+<body ng-app="ngReg">
 <header class="wm-head container" style="background: #fff">
-    <div class="rol-flex-between">
+    <div class="col-flex-between">
     <a href="javascript:history.back();" class="back" ></a>
     </div>
     <h1>
@@ -39,23 +39,51 @@
 </header>
 <a href="/"><img src="__PUBLIC__/images/logo.png" /></a>
 <section class="reg-wrapper" >
-    <form id="regForm" name="regForm" class="reg-form" ng-init="" method="post" action="/user/register/doregister">
+    <form ajax-form  method="post" onsubmit="return false" action="{:U('user/register/doregister')}">
         <div class="wm-input">
-            <input type="text" ng-blur="checkPhone($event)" name="mobile"  ng-model="f.mobile" ng-pattern="mobile" placeholder="请输入您的手机号码" />
+            <input validate required="false" ng-false="手机号码输入有误" ng-type="m" type="text" ng-model="ngPhone" name="mobile"  placeholder="请输入您的手机号码" />
+        </div>
+        <div class="wm-input" ng-controller="codeCtrl">
+            <input  type="text"  name="mcode" placeholder="请输入验证码"  />
+            <button class="get-code"  ng-click="getCode()"  ng-disabled="codeDisabled" type="button"><span ng-bind="t"></span><span ng-model="codeTip" ng-bind="codeTip">获取验证码</span></button>
         </div>
         <div class="wm-input">
-            <input type="text"  name="mcode" placeholder="请输入短信验证码" ng-model="f.smscode"  required />
-            <button class="get-code"  ng-click="getCode()"  ng-disabled="codeDisabled" type="button"><span ng-bind="t"></span><span ng-bind="codeTip">获取验证码</span></button>
-        </div>
-        <div class="wm-input">
-            <input type="password" name="password" ng-model="f.password" ng-minlength="6" ng-maxlength="16" placeholder="请设置您的密码" />
+            <input validate ng-false="密码格式不正确" ng-min="6" ng-max="16" type="password" name="password" placeholder="请设置您的密码" />
         </div>
         <div style="margin-top: 1.8rem;padding:0 .6rem;">
-        <button class="wm-btn btn-danger" type="button" ng-click="submitTips({f:[{mobile:''},{smscode:''},{password:''}]})">确定</button>
+        <button  class="wm-btn btn-danger" type="submit"  >确定</button>
         </div>
     </form>
 </section>
 </body>
-<script type="text/javascript" src="__PUBLIC__/js/layer/layer.js"></script>
-<script src="__PUBLIC__/js/wm-js.js"></script>
+<script>
+var app = angular.module("ngReg",[]);
+app.controller("codeCtrl",function($scope,$interval,$http){
+    $scope.codeTip = "获取验证码";
+    $scope.getCode = function(){
+        if($scope.ngPhone){
+            $http.get('/index.php?g=user&m=register&a=mobile_code&mobile='+$scope.ngPhone);
+            $scope.codeDisabled = true;
+            $scope.t = 60;
+            var timePromise = $interval(function(){
+                $scope.t -= 1;
+                if($scope.t < 1){
+                    $interval.cancel(timePromise);
+                    timePromise = undefined;
+                    $scope.t = "";
+                    $scope.codeTip = "获取验证码";
+                    $scope.codeDisabled = false;
+                }
+            }, 1000, 100);
+            /*console.log(timePromise);
+            if($scope.t < 1){
+                $interval.cancel(timePromise);
+                timePromise = undefined;
+            }*/
+            $scope.codeTip = "秒后再次发送";
+        }
+    }
+})
+</script>
+<script type="text/javascript" module="ngReg"  src="__PUBLIC__/angular.tips.js"></script>
 </html>

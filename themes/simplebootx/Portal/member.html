@@ -61,7 +61,7 @@
         .wm-list [icon=title]{width: auto;}
     </style>
 </head>
-<body data-bg>
+<body data-bg ng-app="myApp">
 <header class="m-head">
     <div class="m-preview" >
         <div class="pre-left">
@@ -84,7 +84,7 @@
                 <hr />
             </li>
         </a>
-        <a href="{:UU('user/center/c_info')}">
+        <a ajax-get data-action="{:UU('user/center/c_info')}">
             <li>
                 <img icon src="__PUBLIC__/images/person_02.png"/> &nbsp;
                 <div icon="title">企业信息</div>
@@ -178,4 +178,5 @@
     </dl>
 </footer>
 </body>
+<script type="text/javascript" module="myApp"  src="__PUBLIC__/angular.tips.js"></script>
 </html>

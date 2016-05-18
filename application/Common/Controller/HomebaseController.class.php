@@ -43,7 +43,11 @@ class HomebaseController extends AppframeController {
     //yhx20160510
 	protected function check_login(){
 		if(!isset($_SESSION["user"])){
-			$this->error('您还没有登录！',__ROOT__."/user/login/index");
+			// $this->error('您还没有登录！',__ROOT__."/user/login/index");
+			$tips['status']=0;//0为失败，1为成功
+            $tips['info']="亲，请登录！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 		}
 		
 	}

@@ -17,7 +17,11 @@ class CenterController extends MemberbaseController {
 	public function index() {
         //判断登录
         if(!sp_is_user_login()) {
-            $this->error("请先登录","/user/login/index");
+            // $this->error("请先登录","/user/login/index");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先登录";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
 		$userid=sp_get_current_userid();
 		$user=$this->users_model->where(array("id"=>$userid))->find();
@@ -121,7 +125,11 @@ class CenterController extends MemberbaseController {
     public function m_info(){
         //判断登录
         if(!sp_is_user_login()) {
-            $this->error("请先登录","/user/login/index");
+            // $this->error("请先登录","/user/login/index");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先登录";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
         $uid = sp_get_current_userid();
         $user_model = M("Users");
@@ -153,7 +161,11 @@ class CenterController extends MemberbaseController {
     public function c_info(){
         //判断登录
         if(!sp_is_user_login()) {
-            $this->error("请先登录","/user/login/index");
+            // $this->error("请先登录","/user/login/index");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先登录";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
         $uid = sp_get_current_userid();
         $user_model = M("Users");
@@ -165,7 +177,11 @@ class CenterController extends MemberbaseController {
 			$this->assign("user",$user);
 			$this->display(":m_company");			
 		}elseif($user["company_status"]==3){
-			$this->error("企业信息审核失败！",U("portal/index/index"),3);
+			// $this->error("企业信息审核失败！",U("portal/index/index"),3);
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="企业信息审核失败！";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/center/reg_company');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 		}
 		elseif($user["company_status"]==2){
 			$this->assign("user",$user);
@@ -173,7 +189,11 @@ class CenterController extends MemberbaseController {
 			//$this->error("企业信息审核中！请耐心等待",U("portal/index/index"),3);
 		}
 		elseif($user["company_status"]==1){
-			$this->error("企业信息不完整！请完善",U("user/center/reg_company"),3);
+			// $this->error("企业信息不完整！请完善",U("user/center/reg_company"),3);
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="企业信息不完整！请完善";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/center/reg_company');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 		}
 
     }
@@ -182,7 +202,11 @@ class CenterController extends MemberbaseController {
     public function m_need(){
         //判断登录
         if(!sp_is_user_login()) {
-            $this->error("请先登录","/user/login/index");
+            // $this->error("请先登录","/user/login/index");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先登录";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
         $uid = sp_get_current_userid();
         $dslist_model = M("Dslist");
@@ -221,7 +245,11 @@ class CenterController extends MemberbaseController {
     public function m_feed(){
         //判断登录
         if(!sp_is_user_login()) {
-            $this->error("请先登录","/user/login/index");
+            // $this->error("请先登录","/user/login/index");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先登录";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
         $uid = sp_get_current_userid();
         $dslist_model = M("Dslist");
@@ -309,9 +337,18 @@ class CenterController extends MemberbaseController {
 
             $user = $user_model->where(array('id'=>$uid))->save($data);
             if($user){
-                $this->success('更新成功！',U("user/center/reg_info"));
+                // $this->success('更新成功！',U("user/center/reg_info"));
+                $tips['status']=1;//0为失败，1为成功
+                $tips['info']="更新成功！";//错误信息
+                $tips['time']=2;
+                $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/center/reg_info');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }else{
-                $this->error('更新失败！',U("user/center/reg_info"));
+                // $this->error('更新失败！',U("user/center/reg_info"));
+                $tips['status']=0;//0为失败，1为成功
+                $tips['info']="更新失败！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }
 
         }
@@ -385,12 +422,25 @@ class CenterController extends MemberbaseController {
         	$user = $user_model->where(array('id'=>$uid))->save($data);
         }
         else{
-        	$this->error('请先填写昵称！',U("user/center/reg_info"));
+        	// $this->error('请先填写昵称！',U("user/center/reg_info"));
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="请先填写昵称！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
         if($user){
-            $this->success('更新成功！',U("user/center/reg_info"));
+            // $this->success('更新成功！',U("user/center/reg_info"));
+            $tips['status']=1;//0为失败，1为成功
+            $tips['info']="更新成功！";//错误信息
+            $tips['time']=2;
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/center/reg_info');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }else{
-            $this->error('更新失败！',U("user/center/reg_info"));
+            // $this->error('更新失败！',U("user/center/reg_info"));
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="更新失败！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
 
 
@@ -421,9 +471,18 @@ class CenterController extends MemberbaseController {
 //        dump($uid);die();
         $user = $user_model->where(array('id'=>$uid))->save($data);
         if($user){
-            $this->success('申请成功！',"/");
+            // $this->success('申请成功！',"/");
+            $tips['status']=1;//0为失败，1为成功
+            $tips['info']="申请成功！";//错误信息
+            $tips['time']=2;
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/index/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }else{
-            $this->error('申请失败！',U("user/center/do_reg_company"),1);
+            // $this->error('申请失败！',U("user/center/do_reg_company"),1);
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="申请失败！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
     }
 

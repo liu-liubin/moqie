@@ -61,12 +61,12 @@
         .wm-list [icon=title]{width: auto;}
     </style>
 </head>
-<body data-bg>
+<body data-bg ng-app="myApp">
 <header class="m-head">
     <div class="m-preview" >
         <div class="pre-left">
             <div class="img" style="background: url('<?php echo ($user["avatar"]); ?>') no-repeat center center;background-size: contain;"></div>
-            <div class="htxt"><?php echo ($user["mobile"]); ?></div>
+            <div class="htxt"><?php echo ($user["mobile"]); ?><br/><?php echo ($user["user_nicename"]); ?></div>
         </div>
         <?php if($user): ?><div class="pre-right"><a href="<?php echo UU('user/center/index');?>" >查看空间 &gt;</a></div>
             <?php else: ?><div class="pre-right"><a href="" > </a></div><?php endif; ?>
@@ -83,7 +83,7 @@
                 <hr />
             </li>
         </a>
-        <a href="<?php echo UU('user/center/c_info');?>">
+        <a ajax-get data-action="<?php echo UU('user/center/c_info');?>">
             <li>
                 <img icon src="/public/images/person_02.png"/> &nbsp;
                 <div icon="title">企业信息</div>
@@ -120,7 +120,7 @@
         <a href="<?php echo UU('user/login/password_reset');?>">
             <li>
                 <img icon src="/public/images/person_06.png"/> &nbsp;
-                <div icon="title">个人设置</div>
+                <div icon="title">修改密码</div>
                 <img src="/public/images/prev2.png" style="width: .6rem;float: right;">
                 <hr />
             </li>
@@ -137,17 +137,18 @@
             <li>
                 <img icon src="/public/images/person_08.png"/> &nbsp;
                 <div icon="title">关于我们</div>
-                <span style="float: right;">0769-5821564</span>
+                <span style="float: right;padding-top:.3rem;">0769-5821564</span>
                 <hr />
             </li>
         </a>
         <a href="<?php echo UU('user/index/logout');?>">
             <li>
-                &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+                <img icon src="/public/images/person_09.png"/> &nbsp;
                 <div icon="title">退出登录</div>
             </li>
         </a>
     </ul>
+	<p>&nbsp;</p>
 </div>
 <footer class="footer">
     <dl class="nav-list ">
@@ -176,4 +177,5 @@
     </dl>
 </footer>
 </body>
+<script type="text/javascript" module="myApp"  src="/public/angular.tips.js"></script>
 </html>

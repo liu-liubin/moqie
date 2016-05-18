@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="__PUBLIC__/css/tigo-ui.css" type="text/css" />
     <link rel="stylesheet" href="__PUBLIC__/css/style.css" type="text/css" />
 </head>
-<body >
+<body ng-app="myApp" >
 <header class="wm-head" style="z-index:0">
-    
-        <a href="javascript:history.back();"  class="back"></a>
+        <a  href="javascript:history.back();"  class="back"></a>
     <h1>
         需求详情页
     </h1>
@@ -29,7 +28,7 @@
         </div>
         <div class=" business-list ">
         <div class="pull-right business-btn" style="width:3rem;">
-            <a href='{:U("user/favorite/do_dsfav")}&id={$dslist.id}'><button type="button" class="tigo-btn gz" style="width:3rem;margin-top:.3rem">{$dslist.isfav}</button></a>
+            <button ajax-get data-action='{:U("user/favorite/do_dsfav")}&id={$dslist.id}' data-html="已关注" type="button" class="tigo-btn gz" style="width:3rem;margin-top:.3rem">{$dslist.isfav}</button>
             <a href="tel:{$dslist.mobile}"><button type="button" class="tigo-btn phone" style="width:3rem;margin-top:.35rem;"><i class="fa fa-phone "></i> </button></a>
         </div>
         </div>
@@ -47,6 +46,6 @@
         </div>
     </div>
 </section>
-
 </body>
+<script type="text/javascript" module="myApp" src="__PUBLIC__/angular.tips.js"></script>
 </html>

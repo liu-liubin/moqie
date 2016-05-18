@@ -65,14 +65,26 @@ class FavoriteController extends MemberbaseController{
 				$user_favorites_model=M("UserFavorites");
 				$find_favorite=$user_favorites_model->where(array('table'=>$table,'object_id'=>$object_id,'uid'=>$uid))->find();
 				if($find_favorite){
-					$this->error("亲，您已收藏过啦！");
+					// $this->error("亲，您已收藏过啦！");
+                    $tips['status']=0;//0为失败，1为成功
+                    $tips['info']="亲，您已收藏过啦！";//错误信息
+                    // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                    $this->ajaxReturn($tips);
 				}else {
 					$post['createtime']=time();
 					$result=$user_favorites_model->add($post);
 					if($result){
-						$this->success("收藏成功！");
+						// $this->success("收藏成功！");
+                        $tips['status']=1;//0为失败，1为成功
+                        $tips['info']="收藏成功！";//错误信息
+                        $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/dslist/dslist_detail',array("id"=>$object_id));//跳转地址,发生错误不需要地址
+                        $this->ajaxReturn($tips);
 					}else {
-						$this->error("收藏失败！");
+						// $this->error("收藏失败！");
+                        $tips['status']=0;//0为失败，1为成功
+                        $tips['info']="收藏失败！";//错误信息
+                        // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                        $this->ajaxReturn($tips);
 					}
 				}
 			}else{
@@ -86,12 +98,17 @@ class FavoriteController extends MemberbaseController{
 
     //YHX
     function do_dsfav(){
-//        $post = json_decode(file_get_contents("php://input"));
+       // $post = json_decode(file_get_contents("php://input"));
+        // echo 123;die();
         $dsid=$_GET['id'];
         $uid=sp_get_current_userid();
         if($uid==null || $uid==""){
 //            $this->ajaxReturn(array("status"=>9));
-            $this->error("亲，请登录！");
+            // $this->error("亲，请登录！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="亲，请登录！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }
 //        dump($uid);die();
         $dslist_model = M('Dslist');
@@ -106,30 +123,61 @@ class FavoriteController extends MemberbaseController{
         $user_favorites_model=M("UserFavorites");
         $find_favorite=$user_favorites_model->where(array('table'=>"dslist",'object_id'=>$dsid,'uid'=>$uid))->find();
         if($find_favorite){
-            $this->success("亲，您已关注过啦");
+            // $this->success("亲，您已关注过啦");
+            $tips['status']=1;//0为失败，1为成功
+            $tips['info']="亲，您已关注过啦";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
         }else {
             $result=$user_favorites_model->add($data);
             if($result){
-                $this->success("关注成功！");
+                // $this->success("关注成功！");
+                $tips['status']=1;//0为失败，1为成功
+                $tips['info']="关注成功！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('portal/dslist/dslist_detail',array("id"=>$object_id));//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }else {
-                $this->error("关注失败！");
+                // $this->error("关注失败！");
+                $tips['status']=0;//0为失败，1为成功
+                $tips['info']="关注失败！";//错误信息
+                // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+                $this->ajaxReturn($tips);
             }
         }
 
     }
 	
 	function delete_favorite(){
+
 		$id=I("get.id",0,"intval");
 
 		$uid=sp_get_current_userid();
+        if($uid==null || $uid==""){
+//            $this->ajaxReturn(array("status"=>9));
+            // $this->error("亲，请登录！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="亲，请登录！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
+        }
 		$post['uid']=$uid;
 		// dump($id);die();
 		$user_favorites_model=M("UserFavorites");
 		$result=$user_favorites_model->where(array('object_id'=>$id,'uid'=>$uid,'table'=>'dslist'))->delete();
 		if($result){
-			$this->success("取消关注成功！");
+			// $this->success("取消关注成功！");
+            $tips['status']=1;//0为失败，1为成功
+            $tips['info']="取消关注成功！";//错误信息
+            $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/favorite/index');//跳转地址,发生错误不需要地址
+            $tips['status']="success";
+            $this->ajaxReturn($tips);
+
 		}else {
-			$this->error("取消关注失败！");
+			// $this->error("取消关注失败！");
+            $tips['status']=0;//0为失败，1为成功
+            $tips['info']="取消关注失败！";//错误信息
+            // $tips['url'] = "http://".$_SERVER['HTTP_HOST'].U('user/login/index');//跳转地址,发生错误不需要地址
+            $this->ajaxReturn($tips);
 		}
 	}
 }

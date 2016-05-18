@@ -7,7 +7,7 @@
     <title>模切之家</title>
     <meta http-equiv="x-ua-compatible" content="IE=edge" />
     <meta name="renderer" content="webkit" />
-    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
     <!--[if lt IE 9]>
     <script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script>
     <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
@@ -24,7 +24,7 @@
 <header class="wm-head container">
 
     <a href="javascript:history.back();" class="back" ></a>
-    <a href="<?php echo UU('dslist/publish');?>" class="tigo-btn sad-btn right" style="position: absolute;z-index: 5;right: .6rem;">+发布</a>
+    <a ajax-get  data-action="<?php echo UU('dslist/publish');?>" class="tigo-btn sad-btn right" style="position: absolute;z-index: 5;right: .6rem;">+发布</a>
     <h1 style="top:-.1rem;z-index: 1;">
         <div class="tigo-radio-group sad-radio">
             <label class="check-radio" ng-class="{active:feed}" onclick="return false" ng-click="feed=true;need=false;togglePro(1)" for="gongying">供给<input id="gongying" name="type" type="radio" /> </label>
@@ -44,7 +44,7 @@
     <!--产品列表-->
     <div class="pro-item clearfix" data-bg>
         <!--弹出产品分类-->
-        <div class="open-item " ng-style="categoryStyle">
+        <div class="open-item " ng-style="categoryStyle" >
             <div class="sad-menu">
                 <ul class="tab-list">
                     <li ng-click="searchCategory(0)">全部</li>
@@ -63,10 +63,10 @@
             </div>
         </div>
         <div ng-style="loadHTML" style="display: block;text-align: center;padding-top: 2rem;"><i style="font-size: 1.6rem" class="fa fa-spinner fa-spin"></i></div>
-        <ul class="product-list market-list" ng-style="contentHTML"  style="display: none;">
+        <ul class="product-list market-list" ng-style="contentHTML"  style="display: none;" >
             <li class="clearfix " ng-repeat="x in productList" >
                 <div class="pro-right pull-right">
-                    <a href='<?php echo U("user/favorite/do_dsfav");?>&id={{x.id}}'><button type="button" class="tigo-btn gz">{{x.isfav}}</button></a>
+                    <button ajax-get data-action='<?php echo U("user/favorite/do_dsfav");?>&id={{x.id}}' data-html="已关注"  type="button" class="tigo-btn gz">{{x.isfav}}</button>
                     <a href="tel:{{x.mobile}}"><button type="button" class="tigo-btn phone"><i class="fa fa-phone "></i> </button></a>
                 </div>
                 <div class="pro-left ">
@@ -115,14 +115,9 @@
 </footer>
 <!---底部导航   end-->
 </body>
+<script type="text/javascript" module="myApp" src="/public/angular.tips.js"></script>
 <script>
-    /*$(function(){
-        $(".sad-radio .check-radio").click(function(){
-            $(this).addClass("active");
-            $(this).siblings().removeClass("active");
-        })
-    })*/
-    var app = angular.module("myApp",[]);
+    //app = angular.module("myApp",[]);
     app.controller("marketCtrl",function($scope,$location,$http){
         $scope.termId = ""; //初始化筛选分类ID
 		$scope.ngKeyword = '<?php echo ((isset($_GET['name']) && ($_GET['name'] !== ""))?($_GET['name']):""); ?>';	//初始化筛选关键字
