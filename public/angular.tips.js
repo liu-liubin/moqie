@@ -1,3 +1,5 @@
+'use strict';
+
 var scriptsLen = document.getElementsByTagName("script").length;
 var ng_Module = document.getElementsByTagName("script")[scriptsLen-1].getAttribute("module");
 //var ng_App = document.getElementsByTagName("script")[scriptsLen-1].getAttribute("app");
@@ -42,7 +44,7 @@ function ngFunTips(obj,callback){
     }
 }   
 if(typeof(app)==="undefined"){
-    app = angular.module(ng_Module,[]);
+   var app = angular.module(ng_Module,[]);
 }
 
 app.directive("ajaxGet",function($http){
@@ -249,3 +251,138 @@ app.directive("validate",function($http){
         }
     }
 })
+
+
+/***
+* 上传插件
+**/
+app.directive("ajaxUpload",function($http){
+    return {
+        restrict : "EA",
+        template : "",
+        replace : false,
+        scope : {},
+        controller:function($scope,$element,$attrs){
+            console.log($scope.info)
+        },
+        link:function($scope,$element,$attrs){
+            var def = {
+                action : $attrs.action || "",
+                method : $attrs.method || "post",
+                enctype : "multipart/form-data",
+                accept : $attrs.accept || "*/*",
+                name : $attrs.name || "file",
+                auto : $attrs.auto || true
+            }
+
+            var iframeName = "WMupload"+Date.now();
+            //表单
+            var frm = document.createElement('form');
+                frm.target=iframeName;
+                frm.action= def.action;
+                frm.method="post";
+                frm.enctype=def.enctype;
+            //框架
+            var ifr = document.createElement('iframe');
+                ifr.name=iframeName;
+                ifr.id=iframeName;
+                ifr.style.display = 'none';
+            //Input file
+            var fin = document.createElement('input');
+                fin.type="file";
+                fin.name=def.name;
+                frm.appendChild(fin);
+            //创建预览区
+            var pre = document.createElement("div");
+
+            //生成上传所需元素
+            $element[0].appendChild(frm);
+            $element[0].appendChild(ifr);
+            $element[0].appendChild(pre);
+            //console.log(document.getElementById(iframeName));
+            //自动提交上传动作
+            fin.addEventListener("change", function(){
+                var reader = new FileReader();
+                    reader.readAsDataURL(this.files[0]);
+                    reader.onload = function(){
+                        pre.innerHTML = '<img src="'+reader.result+'" style="height:200px" />';
+                    }
+                //frm.submit();
+            },false)
+            ifr.addEventListener("load",function(){
+                var status = 200;
+                var html = '';
+                try {
+                    // fixed angular.contents() for iframes
+                    html = ifr.contentDocument.body.innerHTML;
+                } catch (e) {
+                    // in case we run into the access-is-denied error or we have another error on the server side
+                    // (intentional 500,40... errors), we at least say 'something went wrong' -> 500
+                    status = 500;
+                }
+                try {
+                    var rsJson = JSON.parse(html);
+                    // statements
+                } catch(e) {
+                    // statements
+                    status = 900;
+                }
+                $scope.info =rsJson || {status:90};
+            })
+        }
+ 
+    }  
+})
+
+
+/***touch**/
+/*var TouCh = {
+    // 判断设备是否支持touch事件
+    touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+    // 事件
+    events: {                          
+        TouCh: this.TouCh,         
+        handleEvent: function(event) {
+            // this指events对象
+            var self = this;
+           
+            if (event.type == 'touchstart') {
+                self.start(event);
+            } else if(event.type == 'touchmove') {
+                self.move(event);
+            } else if(event.type == 'touchend') {
+                self.end(event);
+            }
+        },
+
+        // 滑动开始
+        start: function(event) {
+            event.preventDefault();                      // 阻止触摸事件的默认动作,即阻止滚屏
+            this.imgScale.addEventListener('touchmove', this, false);
+            this.imgScale.addEventListener('touchend', this, false);
+        },
+
+        // 移动
+        move: function(event) {
+            event.preventDefault();                      // 阻止触摸事件的默认行为，即阻止滚屏
+            //innerHTML=event.touches[0].pageY +"=="+event.touches[1].pageY;        
+        },
+
+        // 滑动释放
+        end: function(event) {
+            // 解绑事件
+            this.imgScale.removeEventListener('touchmove', this, false);
+            this.imgScale.removeEventListener('touchend', this, false);
+        }
+    },
+
+    // 初始化
+    init: function() {
+        // this指slider对象
+        var self = this;
+
+        // addEventListener第二个参数可以传一个对象，会调用该对象的handleEvent属性
+        if(!!self.touch) self.imgScale.addEventListener('touchstart', self.events, false);
+    }
+};
+TouCh.init();*/

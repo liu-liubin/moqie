@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>模切之家</title>
+    <meta http-equiv="x-ua-compatible" content="IE=edge" />
+    <meta name="renderer" content="webkit" />
+    <script src="//cdn.bootcss.com/angular.js/1.4.9/angular.js"></script>
+    <style>
+      
+    </style>
+
+</head>
+<body >
+<div id="clip">
+<img id="tupian" style="display:none" src="test.jpg" />
+</div>
+
+</body>
+<script type="text/javascript">
+    // 以下四个参数由第三步获得
+    /*var img = document.getElementById("tupian");
+var x=0,  
+    y=0,
+    width=200,      //裁切宽度
+    height=150,     //裁切高度
+    w =  img.width,        //裁切图像是最大宽度（即原图片的宽度）
+    h = img.height;         //同上
+var canvas= document.createElement("canvas");
+    canvas.width= width;
+    canvas.height = height;
+    document.body.appendChild(canvas)
+    ctx=canvas.getContext('2d');
+    ctx.drawImage(img,50,50,w,h,0,0,width,height);
+*/
+    /*window.onmousewheel = function(e){
+        if(e.wheelDelta>0){
+            if(w>img.width)
+            ctx.drawImage(img,50,50,w,h,0,0,width,height);
+        }else{
+
+        }
+    }*/
+    var imgScale = {
+            // 判断设备是否支持touch事件
+            touch: ('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch,
+            // 事件
+            events: {                          
+                scale: this.imgScale,         
+                handleEvent: function(event) {
+                    // this指events对象
+                    var self = this;
+                   
+                    if (event.type == 'touchstart') {
+                        self.start(event);
+                    } else if(event.type == 'touchmove') {
+                        self.move(event);
+                    } else if(event.type == 'touchend') {
+                        self.end(event);
+                    }
+                },
+ 
+                // 滑动开始
+                start: function(event) {
+                    event.preventDefault();                      // 阻止触摸事件的默认动作,即阻止滚屏
+                    this.imgScale.addEventListener('touchmove', this, false);
+                    this.imgScale.addEventListener('touchend', this, false);
+                },
+ 
+                // 移动
+                move: function(event) {
+                    event.preventDefault();                      // 阻止触摸事件的默认行为，即阻止滚屏
+         document.getElementById("tee").innerHTML=event.touches[0].pageY +"=="+event.touches[1].pageY;
+                    
+                },
+ 
+                // 滑动释放
+                end: function(event) {
+                    // 解绑事件
+                    this.imgScale.removeEventListener('touchmove', this, false);
+                    this.imgScale.removeEventListener('touchend', this, false);
+                }
+            },
+ 
+            // 初始化
+            init: function() {
+                // this指slider对象
+                var self = this;
+ 
+                // addEventListener第二个参数可以传一个对象，会调用该对象的handleEvent属性
+                if(!!self.touch) self.imgScale.addEventListener('touchstart', self.events, false);
+            }
+        };
+ 
+        imgScale.init();
+</script>
+</html>

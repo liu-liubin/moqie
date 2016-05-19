@@ -39,16 +39,16 @@
 </header>
 <a href="/"><img src="/public/images/logo.png" /></a>
 <section class="reg-wrapper" >
-    <form ajax-form  method="post" onsubmit="return false" action="<?php echo U(user/register/doregister);?>">
+    <form ajax-form  method="post" onsubmit="return false" action="<?php echo U('user/register/doregister');?>">
         <div class="wm-input">
             <input validate required="false" ng-false="手机号码输入有误" ng-type="m" type="text" ng-model="ngPhone" name="mobile"  placeholder="请输入您的手机号码" />
         </div>
         <div class="wm-input" ng-controller="codeCtrl">
             <input  type="text"  name="mcode" placeholder="请输入验证码"  />
-            <button class="get-code"  ng-click="getCode()"  ng-disabled="codeDisabled" type="button"><span ng-bind="t"></span><span ng-model="codeTip" ng-bind="codeTip='获取验证码'">获取验证码</span></button>
+            <button class="get-code"  ng-click="getCode()"  ng-disabled="codeDisabled" type="button"><span ng-bind="t"></span><span ng-model="codeTip" ng-bind="codeTip">获取验证码</span></button>
         </div>
         <div class="wm-input">
-            <input validate ng-false="密码格式正确" ng-min="6" ng-max="16" type="password" name="password" placeholder="请设置您的密码" />
+            <input validate ng-false="密码格式不正确" ng-min="6" ng-max="16" type="password" name="password" placeholder="请设置您的密码" />
         </div>
         <div style="margin-top: 1.8rem;padding:0 .6rem;">
         <button  class="wm-btn btn-danger" type="submit"  >确定</button>
@@ -59,7 +59,8 @@
 <script>
 var app = angular.module("ngReg",[]);
 app.controller("codeCtrl",function($scope,$interval,$http){
-     $scope.getCode = function(){
+    $scope.codeTip = "获取验证码";
+    $scope.getCode = function(){
         if($scope.ngPhone){
             $http.get('/index.php?g=user&m=register&a=mobile_code&mobile='+$scope.ngPhone);
             $scope.codeDisabled = true;
