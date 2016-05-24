@@ -2,19 +2,26 @@
 
 var scriptsLen = document.getElementsByTagName("script").length;
 var ng_Module = document.getElementsByTagName("script")[scriptsLen-1].getAttribute("module");
+var ng_Tipe = document.getElementsByTagName("script")[scriptsLen-1].getAttribute("tipe");
 //var ng_App = document.getElementsByTagName("script")[scriptsLen-1].getAttribute("app");
 //console.log(document.getElementsByTagName("script")[scriptsLen-1]);
 if(!document.getElementById("WMNGSTYLECSS")) { //先检查要建立的样式表ID是否存在，防止重复添加  
     var wmcsstyle = document.createElement("style");
     document.head.appendChild(wmcsstyle);
     wmcsstyle.setAttribute("id", "WMNGSTYLECSS");
-    wmcsstyle.innerHTML = '.wm-ngTips{-webkit-border-radius:.2rem;border-radius:.2rem;position:fixed;background:rgba(10,10,10,.5);top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);padding:.8rem 1.2rem;max-width:6rem;font-size:.8rem;color:#fff;word-wrap: break-word;box-sizing: content-box;z-index:9999999;display:none;} .wm-ngTipShade{height:100%;width:100%;position:fixed;z-index:9999998;top:0;left:0;display:none;}'  ;
+    wmcsstyle.innerHTML = '.wm-ngTips{-webkit-border-radius:.2rem;border-radius:.2rem;position:fixed;background:rgba(10,10,10,.5);top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);padding:.8rem 1.2rem;max-width:6rem;font-size:.8rem;color:#fff;word-wrap: break-word;box-sizing: content-box;z-index:9999999;display:none;} .wm-ngTipShade{height:100%;width:100%;position:fixed;z-index:9999998;top:0;left:0;display:none;}'
+    +'.wm-ngTips2{-webkit-border-radius:.2rem;border-radius:.2rem;position:fixed;background:rgba(10,10,10,.66);top:-.2rem;left:0;width:90%;margin-left:5%;font-size:.8rem;color:#fff;word-wrap: break-word;box-sizing: initial;z-index:9999999;padding:.6rem 0;display:none;text-align:center;}'  ;
     var tib = document.createElement("div");
     var shade = document.createElement("div");
     document.body.appendChild(tib);
     document.body.appendChild(shade);
-    shade.setAttribute("class", "wm-ngTipShade");
-    tib.setAttribute("class", "wm-ngTips"); 
+    if(ng_Tips==2){
+        shade.setAttribute("class", "wm-ngTipShade");
+        tib.setAttribute("class", "wm-ngTips2"); 
+    }else{
+        shade.setAttribute("class", "wm-ngTipShade");
+        tib.setAttribute("class", "wm-ngTips"); 
+    }
 }
 /*
 * @obj {content,time}
@@ -47,6 +54,13 @@ if(typeof(app)==="undefined"){
    var app = angular.module(ng_Module,[]);
 }
 
+/*参数说明 
+* <a ajax-get data-action="url" data-redirect="test.html" data-html="成功后显示字符" ></a>
+* method 提交方式
+* action 提交地址
+* redirect 指定跳转地址
+* html 提交成功后显示的html
+*/
 app.directive("ajaxGet",function($http){
     return {
         restrict : "EA",
@@ -59,14 +73,7 @@ app.directive("ajaxGet",function($http){
             * $scope，与指令元素相关联的作用域
             * $element，当前指令对应的 元素
             * $attrs，由当前元素的属性组成的对象
-            * $transclude，嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数****/
-            /*参数说明 
-            * method 提交方式
-            * action 提交地址
-            * redirect 指定跳转地址
-            * html 提交成功后显示的html
-            */
-            //console.log($attrs)    
+            * $transclude，嵌入链接函数，实际被执行用来克隆元素和操作DOM的函数****/   
             $scope.submit = function(){
                 $http({
                     method:$attrs.method || "get",
@@ -176,49 +183,40 @@ app.directive("ajaxForm",function($http){
         }
     }
 });
-/*apps.directive("typeSubmit",function($http){
-    return {
-        restrict:"EA",
-        replace:false,
-        scope:true,
-        require:"^ajaxForm",
-        controller:function($scope){
-            return "123545"
-        },
-        link:function($scope,$element,$attrs,$supDom){
-            console.log($supDom)
-            $scope.submit = function(){
-                console.log($element)
-            }
-        }
-    }
-})*/
+
 app.directive("validate",function($http){
     return{
         restrict:"EA",
         template:"",
         replace:false,
         scope:{
-            tp:"@ngType",    //内容验证类型
-            min:"@ngMin",
-            max:"@ngMax",
-            suc:"@ngTrue",
-            err:"@ngFalse"        
+            exp:"@ngExp",       //自定义正则验证
+            tp:"@ngType",       //内容验证类型
+            min:"@ngMin",       //内容最少长度
+            max:"@ngMax",       //内容最大长度
+            suc:"@ngTrue",      //验证通过提示文字
+            err:"@ngFalse",     //验证不通过提示文字
+            url:"@ngUrl"        //服务器端验证
         },
         controller:function($scope,$element,$attrs){ 
             $scope.checked = function(){
-               if($scope.check($scope.tp)){
+                if($scope.exp){
+                    var partten = new RegExp($scope.exp);
+                        return partten.test($element[0].value);
+                }
+                if($scope.check($scope.tp)){
 
-               }else{
+                }else{
                     $scope.ngTips({
-                        content:$scope.err
+                        content:$scope.err || "验证不通过"
                     })
-               }
+                }
             }
             $scope.ngTips = ngFunTips;
         },
         link:function($scope,$element,$attrs){
             $scope.check = function(exp){
+                var _str =  $element[0].value.trim();
                 switch (exp) {
                     case "url":
                         return!!$element[0].value.match(/(((^https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/g);
@@ -227,6 +225,10 @@ app.directive("validate",function($http){
                         return!!$element[0].value.match(/^(13[0-9]|14[7]|15[0-9]|18[0-9])\d{8}$/);
                         break;
                     case "email":
+                        return!!_str.match(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)
+                        break;
+                    case "num":
+                        return!!$element[0].value.match(/^[0-9]{0,}$/);
                         break;
                     default: 
                         if($scope.min && $scope.max){
@@ -255,6 +257,7 @@ app.directive("validate",function($http){
 
 /***
 * 上传插件
+* <div ajax-upload id="file" name="pics" action="upload.php"></div>
 **/
 app.directive("ajaxUpload",function($http){
     return {

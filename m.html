@@ -14,91 +14,11 @@
 
 </head>
 <body ng-app="myApp" >
-    <div ajax-upload id="file" name="pics" action="angular-file-upload/examples/simple/upload.php"></div>
+    <input type="text" validate value="" ng-type="url">
     <div class="" ng-bind="info"></div>
 </body>
+<script type="text/javascript" module="myApp" src="public/angular.tips.js"></script>
 <script type="text/javascript">
-"user strcit";
-var app = angular.module("myApp",[]);
-app.directive("ajaxUpload",function($http){
-    return {
-        restrict : "EA",
-        template : "",
-        replace : false,
-        scope : {},
-        controller:function($scope,$element,$attrs){
-            console.log($scope.info)
-        },
-        link:function($scope,$element,$attrs){
-            var def = {
-                action : $attrs.action || "",
-                method : $attrs.method || "post",
-                enctype : "multipart/form-data",
-                accept : $attrs.accept || "*/*",
-                name : $attrs.name || "file",
-                auto : $attrs.auto || true
-            }
-
-            var iframeName = "WMupload"+Date.now();
-            //表单
-            var frm = document.createElement('form');
-                frm.target=iframeName;
-                frm.action= def.action;
-                frm.method="post";
-                frm.enctype=def.enctype;
-            //框架
-            var ifr = document.createElement('iframe');
-                ifr.name=iframeName;
-                ifr.id=iframeName;
-                ifr.style.display = 'none';
-            //Input file
-            var fin = document.createElement('input');
-                fin.type="file";
-                fin.name=def.name;
-                frm.appendChild(fin);
-            //创建预览区
-            var pre = document.createElement("div");
-
-            //生成上传所需元素
-            $element[0].appendChild(frm);
-            $element[0].appendChild(ifr);
-            $element[0].appendChild(pre);
-            //console.log(document.getElementById(iframeName));
-            //自动提交上传动作
-            fin.addEventListener("change", function(){
-                var reader = new FileReader();
-                    reader.readAsDataURL(this.files[0]);
-                    reader.onload = function(){
-                        pre.innerHTML = '<img src="'+reader.result+'" style="height:200px" />';
-                    }
-                //frm.submit();
-            },false)
-            ifr.addEventListener("load",function(){
-                var status = 200;
-                var html = '';
-                try {
-                    // fixed angular.contents() for iframes
-                    html = ifr.contentDocument.body.innerHTML;
-                } catch (e) {
-                    // in case we run into the access-is-denied error or we have another error on the server side
-                    // (intentional 500,40... errors), we at least say 'something went wrong' -> 500
-                    status = 500;
-                }
-                try {
-                    var rsJson = JSON.parse(html);
-                    // statements
-                } catch(e) {
-                    // statements
-                    status = 900;
-                }
-                $scope.info =rsJson || {status:90};
-            })
-        }
- 
-    }  
-})
-  
-
 
  /* var file = this.files[0];
         var res =  new FileReader();

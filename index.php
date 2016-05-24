@@ -3,6 +3,7 @@
  * 入口文件
  * Some rights reserved：www.tigonetwork.com
  */
+
 if (ini_get('magic_quotes_gpc')) {
 	function stripslashesRecursive(array $array){
 		foreach ($array as $k => $v) {
@@ -18,7 +19,7 @@ if (ini_get('magic_quotes_gpc')) {
 	$_POST = stripslashesRecursive($_POST);
 }
 //开启调试模式
-define("APP_DEBUG", true);
+define("APP_DEBUG", FALSE);
 //网站当前路径
 define('SITE_PATH', dirname(__FILE__)."/");
 //define("BIND_MODULE","Portal");
